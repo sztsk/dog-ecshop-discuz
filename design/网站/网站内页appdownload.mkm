@@ -1,0 +1,15 @@
+<MKM version="2.0" imageFileUrl="file:///C:/wamp/www/github/dog-ecshop-discuz/design/%e7%bd%91%e7%ab%99/%e7%bd%91%e7%ab%99%e5%86%85%e9%a1%b5appdownload.png">
+  <Marks>
+    <LengthMark direction="3" color="16711680" length="20" x="570" y="1770"/>
+    <LengthMark direction="3" color="16711680" length="2017" x="592" y="1026"/>
+    <LengthMark direction="12" color="16711680" length="484" x="106" y="1519"/>
+    <ColorMark defaultDirection="9" colorSystem="hex" direction="9" color="16711680" targetColor="13816530" offsetX="25" offsetY="10" x="627" y="1519"/>
+    <LengthMark direction="12" color="16711680" length="495" x="591" y="1522"/>
+    <RectMark color="16711680" x="627" y="1147" offsetX="83" offsetY="82"/>
+    <LengthMark direction="3" color="16711680" length="16" x="668" y="1244"/>
+    <ColorMark defaultDirection="9" colorSystem="hex" direction="9" color="16711680" targetColor="15198183" offsetX="25" offsetY="10" x="900" y="1286"/>
+    <LengthMark direction="12" color="16711680" length="25" x="812" y="1437"/>
+    <LengthMark direction="3" color="16711680" length="818" x="38" y="135"/>
+    <RectMark color="16711680" x="90" y="402" offsetX="313" offsetY="111"/>
+  </Marks>
+</MKM>
