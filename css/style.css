@@ -114,3 +114,12 @@ a:hover{text-decoration:underline}
     .v_link1{ width: 178px; height: 200px; position: absolute; left: 128px; top: -73px}
     .v_link2{ width: 178px; height: 200px; position: absolute; left: 412px; top: -73px}
     .v_link3{ width: 178px; height: 200px; position: absolute; left: 699px; top: -73px}
+
+/*VIP 1*/
+.v_cnt{text-align: center; line-height: 35px; font-size: 14px; margin-bottom: 60px;}
+.v_cnt_ico{margin: 33px auto; text-align: center;}
+.v_cnt_tit{font-size: 18px; margin-bottom: 25px;}
+.v_cnt_hr{font-size: 0; height: 1px; background: #ccc; display: block; margin: 22px auto; width: 500px;}
+.v_cnt_card{}
+.v_cnt_card img{display: block; margin: 0 auto}
+.v_cnt_txt p{margin: 20px 0; text-align: center;}
