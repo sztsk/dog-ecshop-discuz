@@ -38,6 +38,18 @@ a:hover{text-decoration:underline}
 .mod_hd{height: 120px;background: #ffcd33 url("../imgs/bg.png") repeat; border-top: 10px solid #ffcd33 }
     .mod_logo{width:100px;height:100px;margin: 6px auto;}
 
+.mod_toolbar{background: #414141; height: 45px; line-height: 45px; font-size: 14px; color: #eeedea;}
+.mod_toolbar_nav{ float: left; /* width: 640px; */ height: 45px; padding-left: 10px; overflow: hidden;}
+.mod_toolbar_nav li{ float: left; margin-right: 20px;}
+.mod_toolbar_nav a{color:#eeedea; display: block; padding: 0 20px; }
+.mod_toolbar_nav a.last{margin-right: 0;}
+.mod_toolbar_nav a:hover,
+.mod_toolbar_nav a.selected{background: #eeedea; color:#414141; text-decoration: none; }
+.mod_toolbar_info{ float: right; color: #f4dfa0; margin-right: 20px;}
+.mod_toolbar_info a{color: #f4dfa0;}
+.mod_toolbar_info span{padding: 0 10px;}
+
+
 /*ft*/
 .mod_ft{height: 115px; padding-top: 20px; background: #bbe7e4;}
     .mod_ft_logo{width:103px;height:103px; display: block; float: left; background-position:-483px -201px;}
@@ -167,3 +179,24 @@ a:hover{text-decoration:underline}
 .v_cnt_card{}
 .v_cnt_card img{display: block; margin: 0 auto}
 .v_cnt_txt p{margin: 20px 0; text-align: center;}
+
+
+/*===== 电子商城 =====*/
+.s_logo{background-position:-512px -566px;}
+.s_goods{ width: 990px; overflow: hidden; color: #886850; font-size: 14px;}
+.s_goods ul{width: 1100px; margin-bottom: 30px;}
+.s_goods li{ width: 320px; float: left; margin: 0 11px 20px 0; text-align: center;border: solid 1px #eae8e9;-webkit-transition:border 0.2s ease-out;}
+.s_goods li img{ width: 320px; height: 320px;}
+.s_goods li:hover{border: 1px solid #886850 }
+    .s_goods_tit{margin: 10px 0 5px 0; width: 100%; text-overflow:ellipsis; overflow:hidden; white-space:nowrap;}
+    .s_goods_tit a{color:#886850 }
+    .s_goods_price{color:#c40000; font-size: 18px; font-weight: 700; }
+    .s_goods_price span{font-size: 14px; font-family: "arial";}
+    .s_goods_action a{height: 26px; line-height: 26px; width: 100px; display: inline-block; margin: 15px 10px; text-align: center; border: 2px solid #886850;}
+        .s_goods_view{color:#886850 }
+        .s_goods_buy{color: #fff; background: #886850}
+
+.s_nav{ padding: 5px; margin: 20px auto; border-radius: 5px; background: #886850}
+.s_nav a{display: block; float: left; padding: 10px; margin-right: 20px; border-radius: 5px; color: #fff;}
+.s_nav a:hover,
+.s_nav a.selected{background: #9b806b; text-decoration: none;}
