@@ -192,7 +192,7 @@ a:hover{text-decoration:underline}
     .s_goods_tit a{color:#886850 }
     .s_goods_price{color:#c40000; font-size: 18px; font-weight: 700; }
     .s_goods_price span{font-size: 14px; font-family: "arial";}
-    .s_goods_action a{height: 26px; line-height: 26px; width: 100px; display: inline-block; margin: 15px 10px; text-align: center; border: 2px solid #886850;}
+    .s_goods_action a{height: 26px; line-height: 25px; width: 100px; display: inline-block; margin: 15px 10px; text-align: center; border: 2px solid #886850;}
         .s_goods_view{color:#886850 }
         .s_goods_buy{color: #fff; background: #886850}
 
