@@ -31,7 +31,9 @@ a:hover{text-decoration:underline}
 .mod_ft_logo,
 .mod_ft_email,
 .bjqs-controls li a,
-.bjqs-markers li a{background-image: url("../imgs/imgs.png"); background-repeat: no-repeat;}
+.bjqs-markers li a,
+.v_bg_2 a,
+.d_banner_down{background-image: url("../imgs/imgs.png"); background-repeat: no-repeat;}
 
 /*GB*/
 .mod_hd .grid_c1{ overflow: hidden;}
@@ -58,14 +60,17 @@ a:hover{text-decoration:underline}
     .mod_ft_list a{font-weight: 700;}
     .mod_ft_email{width:65px;height:56px; display: block; float: right; background-position:-600px -202px;margin: 20px 0 0 0;}
 
-/*index页面*/
+
+/*===== index页面 =====*/
 .i_hd{ height: 260px; background: #bbe7e4; }
     .i_logo{width:440px;height:145px;background-position:-6px -162px; margin: 60px 0 0 10px; float: left; _display: inline;}
     .i_hshare{width:138px;height:54px;background-position:-209px 0; float: right; margin: 4px 15px 100px 0}
     .i_hshare a{width:68px;height:53px; display: inline-block}
     .i_action{ width: 400px; float: right;}
-    .i_action_ico1{width:187px;height:72px; display: inline-block; background-position:-10px -5px;}
-    .i_action_ico2{width:187px;height:72px; display: inline-block; background-position:-10px -77px;}
+    .i_action_ico1{width:187px;height:72px; display: inline-block; background-position:-10px -5px; -webkit-transition:opactity 0.2s ease-out;}
+    .i_action_ico1:hover{ opacity: 0.7;filter:alpha(opacity=70);}
+    .i_action_ico2{width:187px;height:72px; display: inline-block; background-position:-10px -77px;-webkit-transition:opactity 0.2s ease-out;}
+    .i_action_ico2:hover{ opacity: 0.7;filter:alpha(opacity=70);}
 
 /*banner*/
 .i_banner{ height: 493px;}
@@ -92,7 +97,6 @@ a:hover{text-decoration:underline}
     .i_cnt a{display: block;width:230px;height:230px;-webkit-transform:rotate(0deg); -webkit-transition:all 0.2s ease-out;  }
     .i_cnt a:hover{-webkit-transform:rotate(10deg);}
         .i_cnt_ico1{background-position:-13px -323px; }
-        .i_cnt_ico1:hover{}
         .i_cnt_ico2{background-position:-245px -323px;}
         .i_cnt_ico3{background-position:-482px -323px;}
 
@@ -101,22 +105,17 @@ a:hover{text-decoration:underline}
     .i_fshare{margin: 0 0 0 14px;}
     .i_fshare a{display: inline-block; width: 38px; height: 38px; margin-right: 2px; }
 
-/*专题页面*/
-    .t_logo{width:100px;height:100px;background-position: -415px -63px; margin: 6px auto;}
+/*===== 专题页面 =====*/
+.t_logo{width:100px;height:100px;background-position: -415px -63px; margin: 6px auto;}
 /*专题slider*/
 .t_cnt{margin: 241px 0 189px 0;}
     .t_cnt_item{ width: 200px; margin: 10px 167px 0 10px; float: left; _display: inline; text-align: center;}
     .t_cnt_item_last{margin-right: 0}
-    .t_cnt_img{ width: 200px; height: 200px; margin-bottom: 32px; display: block;}
+    .t_cnt_img{ width: 200px; height: 200px; margin-bottom: 32px; display: block; opacity: 1;  -webkit-transform:rotate(0deg); -webkit-transition:all 0.2s ease-out;}
+    .t_cnt_img:hover{opacity: 0.7;filter:alpha(opacity=70);-webkit-transform:rotate(10deg);}
     .t_cnt_tit{font-size: 21px; font-weight: 700; color: #000;}
     .t_cnt_stit{color: #888; width: 100%; text-overflow:ellipsis; overflow:hidden; white-space:nowrap; margin: 7px 0 48px 0;}
     .t_cnt_desc{ color: #888; line-height: 22px; font-size: 16px;}
-    /*点*/
-    /*.t_dot{ *//* width: 148px; *//* padding: 106px 0 78px 430px;}*/
-    /*.t_dot_l{width:52px;height:53px; display: inline-block; background-position: -343px 0;margin-right: 20px;}*/
-    /*.t_dot_l:hover{background-position:-531px -13px;}*/
-    /*.t_dot_r{width:52px;height:53px; display: inline-block; background-position: -421px 1px;}*/
-    /*.t_dot_r:hover{background-position:-609px -12px;}*/
 
 /*slider*/
 .t_cnt .bjqs{position:relative;overflow:hidden;}
@@ -133,7 +132,8 @@ a:hover{text-decoration:underline}
 
 
 
-/*下载页面*/
+
+/*===== 下载页面 =====*/
 .d_logo{background-position:-516px -68px;}
     /*下载介绍*/
 .d_app{border-bottom: 1px solid #d2d2d2}
@@ -146,8 +146,9 @@ a:hover{text-decoration:underline}
         .d_banner_2{background: url("../imgs/download/b2.jpg") no-repeat center; height: 304px;}
         .d_banner_3{background: url("../imgs/download/b3.jpg") no-repeat center; height: 246px;}
         .d_banner_2 .grid_c1{position: relative;}
-            .d_banner_down{ width: 313px; height: 111px; position: absolute; top: -3px; left: -15px;}
-            .d_banner_txt{position: absolute; top: 43px; left: 305px; color: #fff;font-size: 14px;}
+            .d_banner_down{ width:316px;height:111px;background-position:-477px -666px; position: absolute; top: -3px; left: -15px;-webkit-transition:top 0.2s ease-out;}
+            .d_banner_down:hover{ top: -8px; }
+            .d_banner_txt{position: absolute; top: 33px; left: 305px; color: #fff;font-size: 14px;}
     .d_house{margin: 0 0 0 10px;}
         .d_house_hd{width:475px;height:55px; line-height: 55px; font-size: 28px; text-indent: 15px; color: #fff;background-position:-9px -561px;}
         .d_house_bd{padding: 10px 0;}
@@ -160,16 +161,18 @@ a:hover{text-decoration:underline}
                     .d_house_info{font-size: 18px; color: #949494; }
                     .d_house_info span{padding-right: 13px;}
 
-/*VIP*/
+
+/*===== VIP =====*/
 .v_logo{background-position:-629px -77px;}
 .v_bg{margin-bottom: 150px;}
 .v_bg_1{background: url("../imgs/vip/1.jpg") no-repeat center; height: 157px}
-.v_bg_2{background: url("../imgs/vip/2.jpg") no-repeat center; height: 241px}
-.v_bg_3{background: url("../imgs/vip/3.jpg") no-repeat center; height: 133px}
-.v_bg_3 .grid_c1{position: relative;}
-    .v_link1{ width: 178px; height: 200px; position: absolute; left: 128px; top: -73px}
-    .v_link2{ width: 178px; height: 200px; position: absolute; left: 412px; top: -73px}
-    .v_link3{ width: 178px; height: 200px; position: absolute; left: 699px; top: -73px}
+.v_bg_2{background: url("../imgs/vip/2.jpg") no-repeat center; height: 373px}
+.v_bg_2 .grid_c1{position: relative;}
+.v_bg_2 a{position: absolute;width:144px;height:147px;top: 150px; -webkit-transition:top 0.2s ease-out;}
+.v_bg_2 a:hover{top: 140px;}
+    .v_link1{ left: 144px;background-position:-19px -633px;}
+    .v_link2{ left: 428px; background-position:-173px -631px;}
+    .v_link3{ left: 703px;background-position:-330px -625px;}
 
 /*VIP 1*/
 .v_cnt{text-align: center; line-height: 35px; font-size: 14px; margin-bottom: 60px;}
