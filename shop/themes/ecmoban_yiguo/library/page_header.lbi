@@ -10,13 +10,13 @@ var process_request = "{$lang.process_request}";
 <div class="mod_toolbar">
     <div class="grid_c1 clear">
         <ul class="mod_toolbar_nav">
-            <li><a href="index.html">首页</a></li>
-            <li><a href="topic.html">专题</a></li>
-            <li><a href="download.html">APP下载</a></li>
-            <li><a href="vip.html">会员卡</a></li>
-            <li><a href="shop/" class="selected">电子项圈</a></li>
-            <li><a href="forum/forum.php">论坛</a></li>
-            <li class="last"><a href="contact.html">联系我们</a></li>
+            <li><a href="/index.html">首页</a></li>
+            <li><a href="/topic.html">专题</a></li>
+            <li><a href="/download.html">APP下载</a></li>
+            <li><a href="/vip.html">会员卡</a></li>
+            <li><a href="/shop/" class="selected">电子项圈</a></li>
+            <li><a href="/forum/forum.php">论坛</a></li>
+            <li class="last"><a href="/contact.html">联系我们</a></li>
         </ul>
         <div class="mod_toolbar_info">
             {insert_scripts files='transport.js,utils.js'}

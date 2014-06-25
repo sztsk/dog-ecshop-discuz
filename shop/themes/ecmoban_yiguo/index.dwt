@@ -25,9 +25,7 @@
                 <img src="../../imgs/shop/1.jpg" alt=""/>
             </div>
             <div class="s_nav clear">
-                <!-- {foreach name=nav_middle_list from=$navigator_list.middle item=nav} -->
-                <!-- <a href="{$nav.url}" {if $nav.opennew eq 1}target="_blank" {/if} {if $nav.active eq 1} class="selected"{/if}>{$nav.name}<span></span></a> -->
-                <!-- {/foreach} -->
+                <a href="/shop/" class="selected">新品上市</a>
                 <!--{foreach from=$categories item=cat}-->
                  <a href="{$cat.url}" {if $cat.opennew eq 1}target="_blank" {/if} {if $cat.active eq 1} class="selected"{/if}>{$cat.name|escape:html}</a>
                  
@@ -49,8 +47,8 @@
                             <!--{/if}-->
                         </p>
                         <div class="s_goods_action">
-                            <a class="s_goods_buy" href="{$goods.url}">立即购买</a>
-                            <!-- <a class="s_goods_buy" href="javascript:addToCart({$goods.id})">立即购买</a> -->
+                            <a class="s_goods_view" href="{$goods.url}">查看详情</a>
+                            <a class="s_goods_buy" href="javascript:addToCart({$goods.id})">加入购物车</a>
                         </div>
                     </li>
                   <!--{/foreach}-->

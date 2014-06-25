@@ -5,7 +5,7 @@
 body{font-size: 12px; color: #666; font-family: "\5FAE\8F6F\96C5\9ED1",tahoma,Arial, Helvetica, sans-serif; margin:0; padding:0;}
 div{margin:0 auto; padding:0;}
 h1,h2,h3,h4,h5,h6,ul,li,dl,dt,dd,form,img,p{margin:0; padding:0; border:none; list-style-type:none;}
-
+h1,h2,h3,h4,h5,h6{font-size:100%}
 a{color:#333;text-decoration:none}
 a:hover{text-decoration:underline}
 .clear{zoom:1}
@@ -1038,11 +1038,12 @@ opacity: 0.7;
 .s_goods_price{color:#c40000; font-size: 18px; font-weight: 700; }
 .s_goods_price span{font-size: 14px; font-family: "arial";}
 .s_goods_action a{height: 26px; line-height: 25px; width: 100px; display: inline-block; margin: 15px 10px; text-align: center; border: 2px solid #886850;}
-.s_goods_action a:hover{color: #fff}
+.s_goods_action a:hover{}
 .s_goods_view{color:#886850 }
 .s_goods_buy{color: #fff; background: #886850}
+.s_goods_buy:hover{color: #fff;}
 
-.s_nav{ padding: 5px; margin: 20px auto; border-radius: 5px; background: #886850}
+.s_nav{ padding: 5px 15px; margin: 20px auto; border-radius: 5px; background: #886850}
 .s_nav a{display: block; float: left; padding: 10px; margin-right: 20px; border-radius: 5px; color: #fff;}
 .s_nav a:hover,
 .s_nav a.selected{background: #9b806b; text-decoration: none;}
