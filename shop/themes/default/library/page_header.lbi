@@ -1,0 +1,26 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script type="text/javascript">
+var process_request = "{$lang.process_request}";
+</script>
+<div class="mod_hd">
+    <div class="grid_c1">
+        <div class="mod_logo s_logo"><span class="hide">电子项圈</span></div>
+    </div>
+</div>
+<div class="mod_toolbar">
+    <div class="grid_c1 clear">
+        <ul class="mod_toolbar_nav">
+            <li><a href="index.html">首页</a></li>
+            <li><a href="topic.html">专题</a></li>
+            <li><a href="download.html">APP下载</a></li>
+            <li><a href="vip.html">会员卡</a></li>
+            <li><a href="shop/" class="selected">电子项圈</a></li>
+            <li><a href="forum/forum.php">论坛</a></li>
+            <li class="last"><a href="contact.html">联系我们</a></li>
+        </ul>
+        <div class="mod_toolbar_info">
+            {insert_scripts files='transport.js,utils.js'}
+            {* ECSHOP 提醒您：根据用户id来调用member_info.lbi显示不同的界面  *}{insert name='member_info'}
+        </div>
+    </div>
+</div>

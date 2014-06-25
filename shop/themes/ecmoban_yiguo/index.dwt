@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Keywords" content="{$keywords}" />
+<meta name="Description" content="{$description}" />
+<!-- TemplateBeginEditable name="doctitle" -->
+<title>{$page_title}</title>
+<!-- TemplateEndEditable -->
+<!-- TemplateBeginEditable name="head" -->
+<!-- TemplateEndEditable -->
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="icon" href="animated_favicon.gif" type="image/gif" />
+<link href="{$ecs_css_path}" rel="stylesheet" type="text/css" />
+<link rel="alternate" type="application/rss+xml" title="RSS|{$page_title}" href="{$feed_url}" />
+{* 包含脚本文件 *}
+{insert_scripts files='common.js,index.js'}
+</head>
+<body>
+<!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->
+
+<div class="s_bd">
+        <div class="grid_c1">
+            <div class="s_banner">
+                <img src="../../imgs/shop/1.jpg" alt=""/>
+            </div>
+            <div class="s_nav clear">
+                <!-- {foreach name=nav_middle_list from=$navigator_list.middle item=nav} -->
+                <!-- <a href="{$nav.url}" {if $nav.opennew eq 1}target="_blank" {/if} {if $nav.active eq 1} class="selected"{/if}>{$nav.name}<span></span></a> -->
+                <!-- {/foreach} -->
+                <!--{foreach from=$categories item=cat}-->
+                 <a href="{$cat.url}" {if $cat.opennew eq 1}target="_blank" {/if} {if $cat.active eq 1} class="selected"{/if}>{$cat.name|escape:html}</a>
+                 
+                <!--{/foreach}--> 
+            </div>
+            <div class="s_goods">
+                <!-- {if $best_goods} -->
+                <ul class="clear">
+                  <!--{foreach from=$best_goods item=goods}-->
+                  <li>
+                        <a href="{$goods.url}"><img src="{$goods.thumb}" alt="{$goods.name|escape:html}" /></a>
+                        <h2 class="s_goods_tit"><a href="{$goods.url}" title="{$goods.name|escape:html}">{$goods.short_style_name}</a></h2>
+                        <div class="s_goods_stit">ORANGE</div>
+                        <p class="s_goods_price">
+                            <!-- {if $goods.promote_price neq ""} -->
+                            {$goods.promote_price}
+                            <!-- {else}-->
+                            {$goods.shop_price}
+                            <!--{/if}-->
+                        </p>
+                        <div class="s_goods_action">
+                            <a class="s_goods_buy" href="{$goods.url}">立即购买</a>
+                            <!-- <a class="s_goods_buy" href="javascript:addToCart({$goods.id})">立即购买</a> -->
+                        </div>
+                    </li>
+                  <!--{/foreach}-->
+                </ul>
+                <!-- {/if} -->
+                
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+<!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
+</body>
+</html>
