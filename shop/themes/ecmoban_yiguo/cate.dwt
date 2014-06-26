@@ -6,17 +6,18 @@
 <meta name="Description" content="{$description}" />
 <!-- TemplateBeginEditable name="doctitle" -->
 <title>{$page_title}</title>
-<!-- TemplateEndEditable -->
-<!-- TemplateBeginEditable name="head" -->
-<!-- TemplateEndEditable -->
+<!-- TemplateEndEditable --><!-- TemplateBeginEditable name="head" --><!-- TemplateEndEditable -->
 <link rel="shortcut icon" href="favicon.ico" />
 <link rel="icon" href="animated_favicon.gif" type="image/gif" />
 <link href="{$ecs_css_path}" rel="stylesheet" type="text/css" />
-<link rel="alternate" type="application/rss+xml" title="RSS|{$page_title}" href="{$feed_url}" />
+<!-- {if $cat_style} -->
+<link href="{$cat_style}" rel="stylesheet" type="text/css" />
+<!-- {/if} -->
 {* 包含脚本文件 *}
-{insert_scripts files='common.js,index.js'}
+{insert_scripts files='common.js,global.js,compare.js'}
 </head>
 <body>
+
 <!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->
 
 <div class="s_bd">
@@ -25,19 +26,18 @@
                 <img src="../../imgs/shop/1.jpg" alt=""/>
             </div>
             <div class="s_nav clear">
-                <a href="/shop/" class="selected">新品上市</a>
+                <a href="/shop/">新品上市</a>
                 <!--{foreach from=$categories item=cat}-->
-                 <a href="cate.php?id={$cat.id}" {if $cat.opennew eq 1}target="_blank" {/if} {if $cat.active eq 1} class="selected"{/if}>{$cat.name|escape:html}</a>
-                 
+                 <a href="{$cat.url}" {if $cat.id eq $category}class="selected"{/if} >{$cat.name|escape:html}</a>
                 <!--{/foreach}--> 
             </div>
             <div class="s_goods">
-                <!-- {if $best_goods} -->
-                <ul class="clear">
-                  <!--{foreach from=$best_goods item=goods}-->
-                  <li>
-                        <a href="{$goods.url}"><img src="{$goods.thumb}" alt="{$goods.name|escape:html}" /></a>
-                        <h2 class="s_goods_tit"><a href="{$goods.url}" title="{$goods.name|escape:html}">{$goods.short_style_name}</a></h2>
+              <ul>
+                <!--{foreach from=$goods_list item=goods}-->
+                    <!-- {if $goods.goods_id} -->
+                    <li>
+                        <a href="{$goods.url}"><img src="{$goods.goods_thumb}" alt="{$goods.goods_name|escape:html}" /></a>
+                        <h2 class="s_goods_tit"><a href="{$goods.url}" title="{$goods.name|escape:html}">{$goods.goods_name}</a></h2>
                         <div class="s_goods_stit">ORANGE</div>
                         <p class="s_goods_price">
                             <!-- {if $goods.promote_price neq ""} -->
@@ -48,13 +48,12 @@
                         </p>
                         <div class="s_goods_action">
                             <a class="s_goods_view" href="{$goods.url}">查看详情</a>
-                            <a class="s_goods_buy" href="javascript:addToCart({$goods.id})">加入购物车</a>
+                            <a class="s_goods_buy" href="javascript:addToCart({$goods.goods_id})">加入购物车</a>
                         </div>
                     </li>
-                  <!--{/foreach}-->
+                    <!--{/if}-->
+                    <!--{/foreach}-->
                 </ul>
-                <!-- {/if} -->
-                
             </div>
         </div>
     </div>
@@ -65,5 +64,7 @@
 
 
 <!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
+
+
 </body>
 </html>

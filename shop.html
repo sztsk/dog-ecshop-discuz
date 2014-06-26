@@ -14,18 +14,23 @@
     <div class="mod_toolbar">
         <div class="grid_c1 clear">
             <ul class="mod_toolbar_nav">
-                <li><a href="index.html">首页</a></li>
-                <li><a href="topic.html">专题</a></li>
-                <li><a href="download.html">APP下载</a></li>
-                <li><a href="vip.html">会员卡</a></li>
-                <li><a href="shop.html" class="selected">电子项圈</a></li>
+                <li><a href="/index.html">首页</a></li>
+                <li><a href="/topic.html">专题</a></li>
+                <li><a href="/download.html">APP下载</a></li>
+                <li><a href="/vip.html">会员卡</a></li>
+                <li><a href="/shop/" class="selected">电子项圈</a></li>
                 <li><a href="forum/forum.php">论坛</a></li>
-                <li class="last"><a href="contact.html">联系我们</a></li>
+                <li class="last"><a href="/contact.html">联系我们</a></li>
             </ul>
-            <div class="mod_toolbar_info">
-                <a href="##">登录</a>
+            <div id="J_user" class="mod_toolbar_info hide">
+                <span id="J_userName"></span>
                 <span>|</span>
-                <a href="##">注册</a>
+                <a href="/shop/user.php?act=logout">退出</a>
+            </div>
+            <div id="J_login" class="mod_toolbar_info">
+                <a href="/shop/user.php">登录</a>
+                <span>|</span>
+                <a href="/shop/user.php?act=register">注册</a>
             </div>
         </div>
     </div>

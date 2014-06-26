@@ -25,6 +25,7 @@ $template_files = array(
     'article_cat.dwt',
     'brand.dwt',
     'category.dwt',
+    'cate.dwt',
     'user_clips.dwt',
     'compare.dwt',
     'gallery.dwt',

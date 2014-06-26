@@ -31,8 +31,9 @@
     var {$key} = "{$item}";
   {/foreach}
   </script>
-  <div class="flowBox">
+  <div id="J_good" class="flowBox">
     <h6><span>{$lang.goods_list}</span></h6>
+        <input id="J_cart" type="hidden" value="{insert name='cart_info_number'}" />
         <form id="formCart" name="formCart" method="post" action="flow.php">
            <table width="99%" align="center" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
             <tr>
@@ -114,6 +115,10 @@
           </table>
           <input type="hidden" name="step" value="update_cart" />
         </form>
+        
+        
+
+
         <table width="99%" align="center" border="0" cellpadding="5" cellspacing="0" bgcolor="#dddddd">
           <tr>
             <td bgcolor="#ffffff"><a href="./"><img src="images/continue.gif" alt="continue" /></a></td>
@@ -167,6 +172,22 @@
   
   <!-- {/if} -->
 </div>
+
+<div id="J_empty" class="ct_goods_empty" id="guangguang_mod">
+            <div class="ct_goods_empty_inner">                              
+                <h3>篮子空空~去买点啥吧！</h3>                                
+                <p>您的购物车暂时无任何商品，请尽快在我们商城选购商品吧！</p>                         
+            </div>
+        </div>
+
+        <script type="text/javascript">
+            var num  = {insert name='cart_info_number'};
+            if(num == 0){
+                document.getElementById('J_good').style.display = 'none';
+                document.getElementById('J_empty').style.display = 'block'
+            }
+        </script>
+
     <div class="blank"></div>
   <!-- {if $collection_goods} -->
   <div class="flowBox">
@@ -860,6 +881,10 @@
         </div>
         <!-- 结束用户登录注册界面 -->
         <!-- {/if} -->
+
+
+
+
 
 
 

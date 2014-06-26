@@ -101,7 +101,7 @@ a:hover{text-decoration:underline}
         .i_cnt_ico3{background-position:-482px -323px;}
 
 .i_ft{ height: 235px; background:#7e8163 url("../imgs/index/foot.png") no-repeat center center; color: #fff; font-size: 20px;}
-    .i_contact{padding: 50px 0 52px 10px;}
+    .i_contact{padding: 50px 0 58px 10px;}
     .i_fshare{margin: 0 0 0 14px;}
     .i_fshare a{display: inline-block; width: 38px; height: 38px; margin-right: 2px; }
 
@@ -203,3 +203,5 @@ a:hover{text-decoration:underline}
 .s_nav a{display: block; float: left; padding: 10px; margin-right: 20px; border-radius: 5px; color: #fff;}
 .s_nav a:hover,
 .s_nav a.selected{background: #9b806b; text-decoration: none;}
+#share{margin-left: 12px;}
+#share a{background: none; display: inline-block; width: 38px; height: 38px; margin-right: 7px; padding: 0}

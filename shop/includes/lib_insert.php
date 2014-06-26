@@ -393,4 +393,27 @@ function insert_vote()
     return $val;
 }
 
+/**
+* 调用购物车商品数目
+*/
+function insert_cart_info_number()
+{
+    $sql = 'SELECT SUM(goods_number) AS number, SUM(goods_price * goods_number) AS amount' .
+           ' FROM ' . $GLOBALS['ecs']->table('cart') .
+           " WHERE session_id = '" . SESS_ID . "' AND rec_type = '" . CART_GENERAL_GOODS . "'";
+    $row = $GLOBALS['db']->GetRow($sql);
+    if ($row)
+    {
+        $number = intval($row['number']);
+        $amount = floatval($row['amount']);
+    }
+    else
+    {
+        $number = 0;
+        $amount = 0;
+    }
+    $str = sprintf($number, price_format($amount, false));
+    return $str;
+}
+
 ?>
