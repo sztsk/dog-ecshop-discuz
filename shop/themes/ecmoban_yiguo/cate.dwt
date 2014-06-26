@@ -28,7 +28,7 @@
             <div class="s_nav clear">
                 <a href="/shop/">新品上市</a>
                 <!--{foreach from=$categories item=cat}-->
-                 <a href="{$cat.url}" {if $cat.id eq $category}class="selected"{/if} >{$cat.name|escape:html}</a>
+                 <a href="cate.php?id={$cat.id}" {if $cat.id eq $category}class="selected"{/if} >{$cat.name|escape:html}</a>
                 <!--{/foreach}--> 
             </div>
             <div class="s_goods">

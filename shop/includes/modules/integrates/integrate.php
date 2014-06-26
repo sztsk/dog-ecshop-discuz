@@ -142,8 +142,15 @@ class integrate
      *
      * @return void
      */
-    function login($username, $password, $remember = null)
+    function login($username, $password)
     {
+        if(is_email($username))
+        {
+                $sql = "select ".$this->field_name." from ".$this->table($this->user_table)." where ".$this->field_email."='".$username."'";
+                $username = $this->db->getOne($sql);
+                if(!$username) return false;
+                //echo $sql;exit;
+        }
         if ($this->check_user($username, $password) > 0)
         {
             if ($this->need_sync)
@@ -151,8 +158,8 @@ class integrate
                 $this->sync($username,$password);
             }
             $this->set_session($username);
-            $this->set_cookie($username, $remember);
-
+            $this->set_cookie($username);
+ 
             return true;
         }
         else

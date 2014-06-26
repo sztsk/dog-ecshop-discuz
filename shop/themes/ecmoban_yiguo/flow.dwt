@@ -173,10 +173,10 @@
   <!-- {/if} -->
 </div>
 
-<div id="J_empty" class="ct_goods_empty" id="guangguang_mod">
+<div id="J_empty" class="ct_goods_empty" id="guangguang_mod" style="display:none">
             <div class="ct_goods_empty_inner">                              
                 <h3>篮子空空~去买点啥吧！</h3>                                
-                <p>您的购物车暂时无任何商品，请尽快在我们商城选购商品吧！</p>                         
+                <p>您的购物车暂时无任何商品，请尽快在我们商城选购商品吧！ <a href="/shop/" style="color:#37f">返回商城</a></p>                         
             </div>
         </div>
 

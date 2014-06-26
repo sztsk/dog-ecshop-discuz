@@ -57,5 +57,10 @@ function tab(id)
 		obj_ul[id].style.display = "none";
 		obj_img[id].src = "images/btn_fold.gif";
 	}
+
+
 }
+var img = new Image()
+	img.src = "images/btn_unfold.gif";
+	img.onload = function(){}
 </script>
