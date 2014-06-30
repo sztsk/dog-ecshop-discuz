@@ -1,0 +1,103 @@
+<!--{subtemplate common/header_common}-->
+<meta name="application-name" content="$_G['setting']['bbname']" />
+<meta name="msapplication-tooltip" content="$_G['setting']['bbname']" />
+<!--{if $_G['setting']['portalstatus']}-->
+<meta name="msapplication-task" content="name=$_G['setting']['navs'][1]['navname'];action-uri={echo !empty($_G['setting']['domain']['app']['portal']) ? 'http://'.$_G['setting']['domain']['app']['portal'] : $_G[siteurl].'portal.php'};icon-uri={$_G[siteurl]}{IMGDIR}/portal.ico" />
+<!--{/if}-->
+<meta name="msapplication-task" content="name=$_G['setting']['navs'][2]['navname'];action-uri={echo !empty($_G['setting']['domain']['app']['forum']) ? 'http://'.$_G['setting']['domain']['app']['forum'] : $_G[siteurl].'forum.php'};icon-uri={$_G[siteurl]}{IMGDIR}/bbs.ico" />
+<!--{if $_G['setting']['groupstatus']}-->
+<meta name="msapplication-task" content="name=$_G['setting']['navs'][3]['navname'];action-uri={echo !empty($_G['setting']['domain']['app']['group']) ? 'http://'.$_G['setting']['domain']['app']['group'] : $_G[siteurl].'group.php'};icon-uri={$_G[siteurl]}{IMGDIR}/group.ico" />
+<!--{/if}-->
+<!--{if helper_access::check_module('feed')}-->
+<meta name="msapplication-task" content="name=$_G['setting']['navs'][4]['navname'];action-uri={echo !empty($_G['setting']['domain']['app']['home']) ? 'http://'.$_G['setting']['domain']['app']['home'] : $_G[siteurl].'home.php'};icon-uri={$_G[siteurl]}{IMGDIR}/home.ico" />
+<!--{/if}-->
+<!--{if $_G['basescript'] == 'forum' && $_G['setting']['archiver']}-->
+<link rel="archives" title="$_G['setting']['bbname']" href="{$_G[siteurl]}archiver/" />
+<!--{/if}-->
+<!--{if !empty($rsshead)}-->
+$rsshead
+<!--{/if}-->
+<!--{if widthauto()}-->
+<link rel="stylesheet" id="css_widthauto" type="text/css" href="data/cache/style_{STYLEID}_widthauto.css?{VERHASH}" />
+<script type="text/javascript">HTMLNODE.className += ' widthauto'</script>
+<!--{/if}-->
+<!--{if $_G['basescript'] == 'forum' || $_G['basescript'] == 'group'}-->
+<script type="text/javascript" src="{$_G[setting][jspath]}forum.js?{VERHASH}"></script>
+<!--{elseif $_G['basescript'] == 'home' || $_G['basescript'] == 'userapp'}-->
+<script type="text/javascript" src="{$_G[setting][jspath]}home.js?{VERHASH}"></script>
+<!--{elseif $_G['basescript'] == 'portal'}-->
+<script type="text/javascript" src="{$_G[setting][jspath]}portal.js?{VERHASH}"></script>
+<!--{/if}-->
+<!--{if $_G['basescript'] != 'portal' && $_GET['diy'] == 'yes' && check_diy_perm($topic)}-->
+<script type="text/javascript" src="{$_G[setting][jspath]}portal.js?{VERHASH}"></script>
+<!--{/if}-->
+<!--{if $_GET['diy'] == 'yes' && check_diy_perm($topic)}-->
+<link rel="stylesheet" type="text/css" id="diy_common" href="data/cache/style_{STYLEID}_css_diy.css?{VERHASH}" />
+<!--{/if}-->
+</head><body id="nv_{$_G[basescript]}" class="pg_{CURMODULE}{if $_G['basescript'] === 'portal' && CURMODULE === 'list' && !empty($cat)} {$cat['bodycss']}{/if}" onkeydown="if(event.keyCode==27) return false;">
+<div id="append_parent"></div>
+<div id="ajaxwaitid"></div>
+<!--{if empty($topic) || $topic['useheader']}-->
+<!--{if $_G['setting']['mobile']['allowmobile'] && (!$_G['setting']['cacheindexlife'] && !$_G['setting']['cachethreadon'] || $_G['uid']) && ($_GET['diy'] != 'yes' || !$_GET['inajax']) && ($_G['mobile'] != '' && $_G['cookie']['mobile'] == '' && $_GET['mobile'] != 'no')}-->
+<div class="xi1 bm bm_c"> {lang your_mobile_browser}<a href="{$_G['siteurl']}forum.php?mobile=yes">{lang go_to_mobile}</a> <span class="xg1">|</span> <a href="$_G['setting']['mobile']['nomobileurl']">{lang to_be_continue}</a> </div>
+<!--{/if}-->
+
+<div class="header_index">
+  <a href="forum.php" title="进入论坛"><i class="spt"></i></a>
+</div>
+<div class="wrap">
+  <div class="banner_index">
+    <!--{if !$_G['uid']}-->
+    <!-- {template member/dw_login_simple} -->
+    <a class="reg_btn" href="member.php?mod=register">点此注册</a>
+    <span class="title">
+      <i class="spt"></i>
+      已有帐号
+    </span>
+    <div class="login_box">
+    <!--{if CURMODULE != 'logging'}-->
+      <script type="text/javascript" src="{$_G[setting][jspath]}logging.js?{VERHASH}"></script>
+      <form method="post" autocomplete="off" id="lsform" action="member.php?mod=logging&action=login&loginsubmit=yes&infloat=yes&lssubmit=yes" onsubmit="{if $_G['setting']['pwdsafety']}pwmd5('ls_password');{/if}return lsSubmit();">
+        <div>
+          <!-- hide start -->
+          <div class="hide">
+            <span id="return_ls" style="display:none"></span>
+            <table cellspacing="0" cellpadding="0">
+              <tr>
+                <td class="fastlg_l"><label for="ls_cookietime"><input type="checkbox" name="cookietime" id="ls_cookietime" class="pc" value="2592000" tabindex="903" />{lang login_permanent}</label></td>
+                <td>&nbsp;<a href="javascript:;" onclick="showWindow('login', 'member.php?mod=logging&action=login&viewlostpw=1')">{lang forgotpw}</a></td>
+              </tr>
+            </table>
+          </div>
+          <!-- hide end -->
+          <div class="ipt ipt_1">
+            <label for="ls_username">{lang account}</label>
+            <input type="text" name="username" id="ls_username" {if $_G['setting']['autoidselect']} value="{if getglobal('setting/uidlogin')}UID/{/if}{lang username}/Email" onfocus="if(this.value == '{if getglobal('setting/uidlogin')}UID/{/if}{lang username}/Email'){this.value = '';this.className = 'px vm';}" onblur="if(this.value == ''){this.value = '{if getglobal('setting/uidlogin')}UID/{/if}{lang username}/Email';this.className = 'px vm xg1';}"{/if} tabindex="901" placeholder="username:" />
+          </div>
+          <div class="ipt">
+            <label for="ls_password">{lang password}</label>
+            <input type="password" name="password" id="ls_password" autocomplete="off" tabindex="902" placeholder="password:" />
+          </div>
+          <input type="hidden" name="quickforward" value="yes" />
+          <input type="hidden" name="handlekey" value="ls" />
+          <input type="submit" class="sub opacity">   
+        </div>
+        <!--{hook/global_login_extra}-->
+        
+      </form>
+
+      <!--{if $_G['setting']['pwdsafety']}-->
+        <script type="text/javascript" src="{$_G['setting']['jspath']}md5.js?{VERHASH}" reload="1"></script>
+      <!--{/if}-->
+
+    <!--{/if}-->
+
+      
+    </div>
+    <!--{/if}-->
+  </div> 
+</div>
+
+<!--{/if}-->
+<!-- wrap start -->
+<div class="wrap">

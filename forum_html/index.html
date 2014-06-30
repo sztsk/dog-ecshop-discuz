@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <title>forum index</title>
+        <link rel="stylesheet" href="css/global.css">
+    </head>
+    <body>
+        <div class="header_index">
+            <i class="spt"></i>   
+        </div>
+        <div class="wrap">
+        	<div class="banner_index">
+        		<a class="reg_btn" href="javascript:">点此注册</a>
+        		<span class="title">
+        			<i class="spt"></i>
+        			已有帐号
+        		</span>
+        		<div class="login_box">
+        			<form action="javascript:">
+	        			<div class="ipt ipt_1">
+	        				<input type="text" placeholder="username:">
+	        			</div>
+	        			<div class="ipt">
+	        				<input type="password" placeholder="password:">
+	        			</div>
+	        			<input type="submit" class="sub opacity">	
+        			</form>
+        		</div>
+        	</div>
+        	<div class="body_index">
+        		<strong class="spt c_title">今日热点</strong>
+        		<div class="portal_slide" id="portalSlide">
+                    <div class="opacity_layer opacity_left"></div>
+                    <div class="opacity_layer opacity_right"></div>
+                    <div class="slide_box">
+                        <div class="slide">
+                            <div class="box" data-index="1">
+                                <div class="img_box">
+                                    <img src="http://placekitten.com/626/230" alt="">
+                                </div>
+                                <div class="txt_box">
+                                    <h2 class="tl">Cras at ultrices erat, sed vulputate eros nunc at augue gravida!</h2>
+                                    <p class="intro">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+                                    <a href="javascript:" class="spt view">View all blog posts</a>
+                                </div>
+                            </div>
+                            <div class="box" data-index="2">
+                                <div class="img_box">
+                                    <img src="http://placekitten.com/626/230" alt="">
+                                </div>
+                                <div class="txt_box">
+                                    <h2 class="tl">Cras at ultrices erat, sed vulputate eros nunc at augue gravida!</h2>
+                                    <p class="intro">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+                                    <a href="javascript:" class="spt view">View all blog posts</a>
+                                </div>
+                            </div>
+                            <div class="box" data-index="3">
+                                <div class="img_box">
+                                    <img src="http://placekitten.com/626/230" alt="">
+                                </div>
+                                <div class="txt_box">
+                                    <h2 class="tl">Cras at ultrices erat, sed vulputate eros nunc at augue gravida!</h2>
+                                    <p class="intro">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+                                    <a href="javascript:" class="spt view">View all blog posts</a>
+                                </div>
+                            </div>
+                        </div>    
+                    </div>
+                    <a href="javascript:" class="spt arr arr_l">left</a>
+                    <a href="javascript:" class="spt arr arr_r">right</a>
+        		</div>
+        	</div>
+        </div>
+        <script src="js/jquery-1.11.1.min.js"></script>
+        <script src="js/portal_slide.js"></script>
+        <script>
+            var fPortal_slide = new FPortalSlide('#portalSlide');
+
+            fPortal_slide.init();
+        </script>
+    </body>
+</html>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<root>
+	<item id="Title"><![CDATA[Discuz! Addon MD5]]></item>
+	<item id="ID"><![CDATA[freeaddon_addon.pack]]></item>
+	<item id="RevisionID"><![CDATA[33817]]></item>
+	<item id="SN"><![CDATA[20140629168E1g8VCuBu]]></item>
+	<item id="RevisionDateline"><![CDATA[1396684801]]></item>
+	<item id="Data">
+		<item id="/source/admincp/1314/1314_addons.php"><![CDATA[7e2242e6a5a47e86080696bcf79f1031]]></item>
+		<item id="/source/admincp/1314/1314_discuz.php"><![CDATA[899fb53ccc96355e6c96cce816d07aa0]]></item>
+		<item id="/source/admincp/1314/1314_halt.php"><![CDATA[6b8313d65fcc0faa8c22ff336efbe8df]]></item>
+		<item id="/source/admincp/1314/1314_plugins.php"><![CDATA[5292af0c6d2bfc369309e98a81368dd9]]></item>
+		<item id="/source/admincp/1314/1314_recommend.php"><![CDATA[7adb7f8db89887f3a1146a43473370e5]]></item>
+		<item id="/source/admincp/1314/1314_support.php"><![CDATA[d1b1eb78f05273bb744bae6b1e8afe4b]]></item>
+		<item id="/source/admincp/1314/images/loader.gif"><![CDATA[aadf13a830af9d293e350b6c5297fdce]]></item>
+		<item id="/source/admincp/1314/images/study_client.lock"><![CDATA[d41d8cd98f00b204e9800998ecf8427e]]></item>
+		<item id="/source/admincp/1314/language/lang_admincp_1314.php"><![CDATA[cc5ffb390268e9b3a68a5c666f6af833]]></item>
+		<item id="/source/admincp/1314/language/lang_admincp_1314.SC_GBK.php"><![CDATA[cc5ffb390268e9b3a68a5c666f6af833]]></item>
+		<item id="/source/admincp/1314/language/lang_admincp_1314.SC_UTF8.php"><![CDATA[e67e52f5680cc4f994d362d29f7e2a66]]></item>
+		<item id="/source/admincp/1314/language/lang_admincp_1314.TC_BIG5.php"><![CDATA[212e95681337620710e85786937e5a3a]]></item>
+		<item id="/source/admincp/1314/language/lang_admincp_1314.TC_UTF8.php"><![CDATA[eab41f38730af56ebc885bdc37d3874e]]></item>
+		<item id="/source/admincp/1314/study_client.lock"><![CDATA[d41d8cd98f00b204e9800998ecf8427e]]></item>
+		<item id="/source/admincp/admincp_1314.php"><![CDATA[50b764ebde5276e800ea68ee03b5870a]]></item>
+		<item id="/source/admincp/menu/menu_1314.php"><![CDATA[20216f0b83a9533d91552227d28bb3a9]]></item>
+		<item id="/source/function/function_cloudaddon.php"><![CDATA[760f7fa3be36c63dafdde216c3adc682]]></item>
+		<item id="/source/language/lang_admincp_1314.php"><![CDATA[16f466b68baca2b75bf08a63ca291048]]></item>
+	</item>
+</root>
