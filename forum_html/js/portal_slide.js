@@ -38,7 +38,7 @@ function FPortalSlide(selector,params) {
     var $Wrapper = _this.selector.find(params.wrapper),
     	$box = $Wrapper.find(params.elemenets),
     	nBox = $box.length + 2,
-    	nBoxWidth = $box.width() + 20,
+    	nBoxWidth = $box.width() + 4,
     	nInitLeft = -nBoxWidth;
 
     var bIsAnimating = false,

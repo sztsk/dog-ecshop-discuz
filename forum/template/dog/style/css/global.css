@@ -46,14 +46,14 @@
 	.portal_slide .opacity_layer{ width: 125px; height: 233px; top: 0; z-index: 8; background-color: #aaa; position: absolute; }
 	.portal_slide .opacity_left{ left: 0; }
 	.portal_slide .opacity_right{ right: 0; }
-	.portal_slide .slide_box{ width: 910px; position: relative; margin: 0 auto; z-index: 1; }
-	.portal_slide .slide{ height: 233px; position: absolute; top: 0; left: 0; }
-	.portal_slide .box{ width: 910px; height: 233px; float: left; margin-right: 20px; }
-	.portal_slide .img_box{ float: right; width: 626px; height: 230px; border-bottom: 3px solid #e8432e; margin-left: 10px; }
-	.portal_slide .txt_box{ height: 233px; overflow: hidden; *zoom: 1; position: relative; }
-	.portal_slide .txt_box .tl{ font-size: 18px; line-height: 24px; margin-bottom: 24px; }
-	.portal_slide .txt_box .intro{ font-size: 12px; line-height: 18px; color: #b8b8b8; }
-	.portal_slide .txt_box .spt{ width: 125px; height: 12px; background-position: -140px 0; position: absolute; bottom: 3px; left: 0; }
+	.portal_slide .slide_box{ width: 942px; position: relative; margin: 0 auto; z-index: 1; }
+		.portal_slide .slide{ height: 233px; position: absolute; top: 0; left: 0; }
+			.portal_slide .box{ width: 942px; height: 233px; float: left; margin-right: 4px; }
+			.portal_slide .img_box{ float: right; width: 626px; height: 230px; border-bottom: 3px solid #e8432e; margin-left: 10px; }
+			.portal_slide .txt_box{ height: 233px; overflow: hidden; *zoom: 1; position: relative; }
+			.portal_slide .txt_box .tl{ font-size: 18px; line-height: 24px; margin-bottom: 24px; }
+			.portal_slide .txt_box .intro{ font-size: 12px; line-height: 18px; color: #b8b8b8; }
+			.portal_slide .txt_box .spt{ width: 125px; height: 12px; background-position: -140px 0; position: absolute; bottom: 3px; left: 0; }
 	.portal_slide .arr{ width: 28px; height: 48px; position: absolute; top: 50%; margin-top: -24px; z-index: 9; }
 	.portal_slide .arr_l{ left: 10px; background-position: -300px -100px; }
 	.portal_slide .arr_r{ right: 10px; background-position: -340px -100px; }
@@ -95,7 +95,7 @@
 		.fl .table .img_box{ width: 50px; float: left; margin-right: 8px; }
 		.fl .table .txt_box{ overflow: hidden; *zoom: 1; }
 		.fl .table .tl{ font-size: 18px; line-height: 30px; color: #808186; }
-		.fl .table .intro{ line-height: 14px; color: #808186; }
+		.fl .table .intro{ line-height: 16px; color: #808186; height: 16px; overflow: hidden; }
 
 
 /*forum_focus*/
