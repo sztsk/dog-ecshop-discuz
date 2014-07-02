@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <title>forum inner_1</title>
+        <link rel="stylesheet" href="css/global.css">
+    </head>
+    <body>
+        <div class="forum_wrap">
+        	<div class="forum_header">
+        		<div class="inner">
+        			<h1 class="logo">
+        				<img src="images/logo.png">
+        			</h1>
+        			<div class="search_box">
+        				<div class="sub">
+        					<i class="spt"></i>
+        					<input type="submit" class="opacity" value="search">
+        				</div>
+        				<div class="ipt">
+        					<input type="text" placeholder="SEARCH">
+        				</div>
+        			</div>
+        		</div>
+        	</div>
+        	<div class="forum_nav">
+        		<div class="inner">
+        			<span class="spt word">多些陪伴，少些等待。欢迎进入狗狗去哪儿论坛！</span>
+        		</div>
+        	</div>
+            <div class="forum_focus inner">
+                <div class="hd">
+                    <strong class="spt">最新推荐</strong>
+                </div>
+                <div class="bd" id="forumFocus">
+                    <div class="fade_box">
+                        <div class="box">
+                            <img src="data/p332x235.jpg" alt="">
+                        </div>
+                        <div class="box">
+                            <img src="data/p332x235.jpg" alt="">
+                        </div>
+                        <div class="box">
+                            <img src="data/p332x235.jpg" alt="">
+                        </div>
+                        <div class="box">
+                            <img src="data/p332x235.jpg" alt="">
+                        </div>
+                        <div class="num"></div>
+                    </div>
+                    <div class="txt_box">
+                        <ul>
+                            <li>
+                                <a href="javascript:">带汪星人赏西湖</a>
+                            </li>
+                            <li>
+                                <a href="javascript:">你了解汪星人的细菌性皮肤病吗？</a>
+                            </li>
+                            <li>
+                                <a href="javascript:">中国首个携宠物入住酒店预订专线开通啦！</a>
+                            </li>
+                            <li>
+                                <a href="javascript:">带汪星人赏西湖</a>
+                            </li>
+                            <li>
+                                <a href="javascript:">你了解汪星人的细菌性皮肤病吗？</a>
+                            </li>
+                            <li>
+                                <a href="javascript:">中国首个携宠物入住酒店预订专线开通啦！</a>
+                            </li>
+                            <li>
+                                <a href="javascript:">带汪星人赏西湖</a>
+                            </li>
+                            <li>
+                                <a href="javascript:">你了解汪星人的细菌性皮肤病吗？</a>
+                            </li>
+                            <li>
+                                <a href="javascript:">中国首个携宠物入住酒店预订专线开通啦！</a>
+                            </li>
+                            <li>
+                                <a href="javascript:">中国首个携宠物入住酒店预订专线开通啦！</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="js/jquery-1.11.1.min.js"></script>
+        <script src="js/forum_fade.js"></script>
+        <script>
+            $(function ($) {
+                var fForumFade = new FForumFade('#forumFocus');
+
+                fForumFade.init();
+            });
+        </script>
+    </body>
+</html>
