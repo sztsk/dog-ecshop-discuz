@@ -73,7 +73,7 @@ a:hover{text-decoration:underline}
     .i_action_ico2:hover{ opacity: 0.7;filter:alpha(opacity=70);}
 
 /*banner*/
-.i_banner{ height: 493px;}
+.i_banner{ height: 697px;}
 /*slider*/
 .i_banner .bjqs{position:relative;overflow:hidden;}
 .i_banner .bjqs-slide{position:absolute; display:none;}
@@ -140,6 +140,8 @@ a:hover{text-decoration:underline}
 .d_app_last{border-bottom: 0 none;}
     .d_app_col1{ width: 495px; float: left;}
     .d_app_col2{ width: 480px; float: left;}
+    .d_app_row3 .d_app_col1{ width: 520px;}
+    .d_app_row3 .d_app_col2{ width: 469px;}
 
     .d_banner{ height: 821px; margin-bottom: 112px; background: url("../imgs/download/bg_rp.jpg") repeat-x}
         .d_banner_1{background: url("../imgs/download/b1.jpg") no-repeat center; height: 271px;}
