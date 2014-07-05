@@ -190,6 +190,45 @@ class uc_note {
 		$uid = intval($get['uid']);
 		if(($member = getuserbyuid($uid, 1))) {
 			dsetcookie('auth', authcode("$member[password]\t$member[uid]", 'ENCODE'), $cookietime);
+		}else{
+			//下面为增加部分
+			$username = $get['username']; 
+			$password = md5(time().rand(100000, 999999));
+			$email = $get['email'];
+			$ip = $_SERVER['REMOTE_ADDR'];
+			$time = time(); 
+
+			$userdata = array(
+				'uid' => $uid,
+				'username' => $username,
+				'password' => $password,
+				'email' => $email,
+				'adminid' => 0,
+				'groupid' => 10,
+				'regdate' => $time,
+				'credits' => 0,
+				'timeoffset' => 9999
+			);
+			DB::insert('common_member', $userdata);
+
+			$status_data = array(
+				'uid' => $uid,
+				'regip' => $ip,
+				'lastip' => $ip,
+				'lastvisit' => $time,
+				'lastactivity' => $time,
+				'lastpost' => 0,
+				'lastsendmail' => 0,
+			);
+			DB::insert('common_member_status', $status_data);
+			DB::insert('common_member_profile', array('uid' => $uid));
+			DB::insert('common_member_field_forum', array('uid' => $uid));
+			DB::insert('common_member_field_home', array('uid' => $uid));
+			DB::insert('common_member_count', array('uid' => $uid)); 
+			$query = DB::query("SELECT uid, username, password FROM ".DB::table('common_member')." WHERE uid='$uid'");
+			if($member = DB::fetch($query)) {
+				dsetcookie('auth', authcode("$member[password]\t$member[uid]", 'ENCODE'), $cookietime);
+			}
 		}
 	}
 

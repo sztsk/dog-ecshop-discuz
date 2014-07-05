@@ -8,7 +8,6 @@
 	<!--{/if}-->
 	var pwlength = <!--{if $_G['setting']['pwlength']}-->$_G['setting']['pwlength']<!--{else}-->0<!--{/if}-->;
 </script>
-
 <script type="text/javascript" src="{$this->setting[jspath]}register.js?{VERHASH}"></script>
 
 <div id="ct" class="ptm wp cl">
@@ -298,6 +297,5 @@ var ignoreEmail = <!--{if $_G['setting']['forgeemail']}-->true<!--{else}-->false
 
 	</div></div>
 </div>
-
 <!--{eval updatesession();}-->
 <!--{template common/footer}-->

@@ -1,7 +1,7 @@
 <?php if(!defined('IN_DISCUZ')) exit('Access Denied'); 
 0
-|| checktplrefresh('./template/dog/common/header.htm', './template/dog/common/header_common.htm', 1404098887, '6', './data/template/6_6_common_header_forum_forumdisplay.tpl.php', './template/dog', 'common/header_forum_forumdisplay')
-|| checktplrefresh('./template/dog/common/header.htm', './template/dog/common/pubsearchform.htm', 1404098887, '6', './data/template/6_6_common_header_forum_forumdisplay.tpl.php', './template/dog', 'common/header_forum_forumdisplay')
+|| checktplrefresh('./template/dog/common/header.htm', './template/dog/common/header_common.htm', 1404547080, '6', './data/template/6_6_common_header_forum_forumdisplay.tpl.php', './template/dog', 'common/header_forum_forumdisplay')
+|| checktplrefresh('./template/dog/common/header.htm', './template/dog/common/pubsearchform.htm', 1404547080, '6', './data/template/6_6_common_header_forum_forumdisplay.tpl.php', './template/dog', 'common/header_forum_forumdisplay')
 ;?>
 <!DOCTYPE html>
 <html>
@@ -33,7 +33,6 @@ jQuery.noConflict();
         DD_belatedPNG.fix('div, ul, img, li, input , a');
     </script>
 <![endif]--> 
-
 
 <meta name="application-name" content="<?php echo $_G['setting']['bbname'];?>" />
 <meta name="msapplication-tooltip" content="<?php echo $_G['setting']['bbname'];?>" />
@@ -179,9 +178,11 @@ initSearchmenu('scbar', '<?php echo $searchparams['url'];?>');
                 <a href="home.php?mod=space&amp;uid=<?php echo $_G['uid'];?>" target="_blank" title="访问我的空间" id="umnav" class="username" onMouseOver="showMenu({'ctrlid':this.id,'ctrlclass':'a'})">
                 <?php echo avatar($_G[uid],small);?>                </a>
                 <?php if($_G['member']['newprompt']) { ?>
-                <span class="num">
-                  <?php echo $_G['member']['newprompt'];?>
-                </span>
+                <a href="home.php?mod=space&amp;do=pm">
+                  <span class="num">
+                    <?php echo $_G['member']['newprompt'];?>
+                  </span>  
+                </a>
                 <?php } ?>
               </span>
             </li>
@@ -213,7 +214,10 @@ initSearchmenu('scbar', '<?php echo $searchparams['url'];?>');
                 <a href="javascript:;" onClick="javascript:lsSubmit();" class="nousername">登录</a>
               </span>
               <span class="txt">
+                <!--
                 <a href="member.php?mod=register" class="btn-register">注册</a>
+                -->
+                <a href="/shop/user.php?act=register&amp;back_act=/forum/forum.php" class="btn-register">注册</a>
               </span>
             </li>
           </ul>
@@ -294,5 +298,6 @@ initSearchmenu('scbar', '<?php echo $searchparams['url'];?>');
   
 </div>
 <?php } ?>
+
 <div id="wp" class="wp">
   <div class="inner">

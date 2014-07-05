@@ -5,13 +5,25 @@
 .opacity{ opacity: 0; filter: alpha(opacity=0); cursor: pointer; }
 :root .opacity{ filter: none; }
 
+/*mod_toolbar*/
+.mod_toolbar{background: #414141; height: 45px; line-height: 45px; font-size: 14px; color: #eeedea; }
+	.mod_toolbar_nav{ float: left; /* width: 640px; */ height: 45px; padding-left: 10px; overflow: hidden;}
+	.mod_toolbar_nav li{ float: left; margin-right: 20px;}
+	.mod_toolbar_nav a{color:#eeedea; display: block; padding: 0 20px; }
+	.mod_toolbar_nav a.last{margin-right: 0;}
+	.mod_toolbar_nav a:hover,
+	.mod_toolbar_nav a.selected{background: #eeedea; color:#414141; text-decoration: none; }
+	.mod_toolbar_info{ float: right; color: #f4dfa0; margin-right: 20px;}
+	.mod_toolbar_info .user_nav .txt{ float: right; }
+	.mod_toolbar_info .user_nav .p_pop a{ line-height: 18px; }
+	.mod_toolbar_info .user_nav .nav_pop { font-size: 12px; margin-top: 22px; text-align: left; }
 
 /*用户登录、信息栏*/
 .forum_nav{ height: 42px; line-height: 42px; background-color: #b4706e; }
 .forum_nav .word{ width: 286px; height: 14px; float: left; background-position: -160px -20px; margin-top: 14px; }
 .forum_nav .user_nav{ float: right;  width: 230px; text-align: right; }
 #user_box .txt a,#login_u_box .txt a{ color: #fff; margin-left: 33px; }
-#user_box .head{ width: 52px; height: 52px; float: left; background-color: #b4706e; border-radius: 26px; position: relative; top: -5px; }
+#user_box .head{ width: 52px; height: 52px; float: left; background-color: #b4706e; border-radius: 26px; position: relative; top: -5px; z-index: 1; }
 #user_box .head img{ width: 100%; border-radius: 26px; }
 #user_box .head .num{ position: absolute; border: 2px solid #6ead9b; border-radius: 10px; line-height: 20px; width: 20px; text-align: center; overflow: hidden; font-size: 12px; color: #ee6623; right: -9px; top: -8px; background-color: #fff; font-weight: 700; font-family: arial; }
 
@@ -49,11 +61,11 @@
 	.portal_slide .slide_box{ width: 942px; position: relative; margin: 0 auto; z-index: 1; }
 		.portal_slide .slide{ height: 233px; position: absolute; top: 0; left: 0; }
 			.portal_slide .box{ width: 942px; height: 233px; float: left; margin-right: 4px; }
-			.portal_slide .img_box{ float: right; width: 626px; height: 230px; border-bottom: 3px solid #e8432e; margin-left: 10px; }
-			.portal_slide .txt_box{ height: 233px; overflow: hidden; *zoom: 1; position: relative; }
+			.portal_slide .img_box{ float: right; width: 626px; height: 230px; border-bottom: 3px solid #e8432e; margin-left: 8px; }
+			.portal_slide .txt_box{ height: 233px; overflow: hidden; *zoom: 1; position: relative; padding-left: 4px; }
 			.portal_slide .txt_box .tl{ font-size: 18px; line-height: 24px; margin-bottom: 24px; }
 			.portal_slide .txt_box .intro{ font-size: 12px; line-height: 18px; color: #b8b8b8; }
-			.portal_slide .txt_box .spt{ width: 125px; height: 12px; background-position: -140px 0; position: absolute; bottom: 3px; left: 0; }
+			.portal_slide .txt_box .spt{ width: 92px; height: 12px; background-position: -140px 0; position: absolute; bottom: 3px; left: 4px; }
 	.portal_slide .arr{ width: 28px; height: 48px; position: absolute; top: 50%; margin-top: -24px; z-index: 9; }
 	.portal_slide .arr_l{ left: 10px; background-position: -300px -100px; }
 	.portal_slide .arr_r{ right: 10px; background-position: -340px -100px; }
@@ -72,10 +84,11 @@
 #scrolltop{ bottom: 165px; border-radius: 0; border: none; }
 #scrolltop a{ background-image: url(../images/scrolltop.png); border: none; background-color: #eee; margin-bottom: 1px; }
 .mod_ft{ height: 115px; padding-top: 20px; background: #bbe7e4; }
-	.mod_ft .inner_1{ width: 990px; margin: 0 auto; }
+	.mod_ft .inner_1{ width: 1200px; margin: 0 auto; }
     .mod_ft_logo{ width:102px; height:102px; display: block; float: left; background-position: 0 -100px; }
     .mod_ft_list{ padding: 36px 0 0 45px; float: left; }
-    .mod_ft_list li{ float: left; margin-right: 60px; font-size: 14px;}
+    .mod_ft .inner_1 .mod_ft_list{ padding-left: 122px; }
+    .mod_ft_list li{ float: left; margin-right: 58px; font-size: 14px;}
     .mod_ft .inner_1 li{ margin-right: 100px; }
     .mod_ft_list a{ font-weight: 700; }
     .mod_ft_email{ width:63px; height:56px; display: block; float: right; background-position: -120px -100px;margin: 20px 0 0 0;}
@@ -101,7 +114,7 @@
 /*forum_focus*/
 .forum_focus{ padding-top: 27px; margin-bottom: 30px; height: 288px; overflow: hidden; }
 	.forum_focus .hd{ height: 17px; padding-bottom: 11px; border-bottom: 2px solid #a0a0a0; }
-	.forum_focus .hd .spt{ width: 75px; height: 17px; display: block; background-position: -280px 0; }
+	.forum_focus .hd .spt{ width: 75px; height: 18px; display: block; background-position: -280px 0; }
 	.forum_focus .bd{ padding-top: 23px; overflow: hidden; }
 	.forum_focus .fade_box{ width: 332px; height: 235px; float: left; position: relative; margin-right: 29px; }
 	.forum_focus .fade_box .box{ position: absolute; left: 0; top: 0; width: 332px; height: 235px; z-index: 0; display: none; }
@@ -204,6 +217,8 @@
 .pnpost_1 .spt{ float: right; }
 
 /*用户中心*/
+.ct2_a .mn{ width: 628px; }
+#td_timeoffset select{ width: 330px; }
 #uhd{ padding-left: 52px; padding-right: 52px; border: none; background-color: #f5f5f5; }
 	#uhd .tb{ border: none; color: #a6a7a9; }
 	#uhd .tb a{ border: none; color: #a6a7a9; }
@@ -233,17 +248,26 @@
 .sc_ft a{ color: #f4711a; }
 #scform_form,.td_srchtxt,.td_srchbtn,#scform_tb .a{ background-image: url(../images/searchbar.png); }
 
+/*主题分类*/
+.ttp { background: none; border: none; margin-bottom: 8px; padding-top: 0; position: relative; z-index: 10; }
+.ttp li { display: block; float: none; }
 
-
-
-
-
-
-
-
-
-
-
+.ttp .a a{ padding: 0 10px; height: 24px; line-height: 24px; background-color: #1bbc9b; color: #fff; border: none; }
+.ttp .a a:hover{ color: #1bbc9b; }
+.ttp a{ border-color: #1bbc9b; }
+.ttp .showli{ width: 100px; height: 22px; text-align: center; line-height: 22px; border-radius: 3px; border: 1px solid #1bbc9b; float: left; position: relative; cursor: pointer; }
+.ttp .showli .spt{ width: 13px; height: 13px; position: absolute; right: 10px; top: 5px; background-position: -360px 0; z-index: 2; }
+.ttp .showli ul{ height: 0; position: absolute; left: -1px; top: -1px; width: 100px; background-color: #fff; z-index: 1; border-radius: 3px; border: 1px solid #1bbc9b; padding-top: 22px; }
+.ttp .showli .on{ position: absolute; top: -1px; left: 0; }
+.ttp .showli .oh{ overflow: hidden; }
+.ttp .showli .oa{ height: 92px; overflow: auto; z-index: 3; }
+.ttp .showli a,.ttp .showli strong{ background: none; border: none; white-space: nowrap; margin: 0; padding: 0; color: #1bbc9b; float: none; }
+.ttp .showli li{ line-height: 22px; margin-bottom: 1px; text-indent: 20px; padding: 0; text-align: left; }
+.ttp .showli li:hover{ background-color: #1bbc9b; }
+.ttp .showli li a:hover{ background: none; }
+.ttp .showli li:hover a{ color: #fff; }
+.ttp .showli .on:hover{ background: none; }
+.ttp .showli .on:hover a{ color: #1bbc9b; }
 
 
 

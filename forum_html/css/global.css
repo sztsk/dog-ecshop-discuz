@@ -45,7 +45,7 @@ img{ vertical-align: top; max-width: 100%; }
 .portal_slide .slide_box{ width: 942px; position: relative; margin: 0 auto; z-index: 1; }
 .portal_slide .slide{ height: 233px; position: absolute; top: 0; left: 0; }
 .portal_slide .box{ width: 942px; height: 233px; float: left; margin-right: 4px; }
-.portal_slide .img_box{ float: right; width: 626px; height: 230px; border-bottom: 3px solid #e8432e; margin-left: 10px; }
+.portal_slide .img_box{ float: right; width: 626px; height: 230px; border-bottom: 3px solid #e8432e; margin-left: 4px; }
 .portal_slide .txt_box{ height: 233px; overflow: hidden; *zoom: 1; position: relative; }
 .portal_slide .txt_box .tl{ font-size: 18px; line-height: 24px; margin-bottom: 24px; }
 .portal_slide .txt_box .intro{ font-size: 12px; line-height: 18px; color: #b8b8b8; }
