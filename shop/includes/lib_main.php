@@ -154,7 +154,7 @@ function assign_ur_here($cat = 0, $str = '')
 
     /* 初始化“页面标题”和“当前位置” */
     $page_title = $GLOBALS['_CFG']['shop_title'];
-    $ur_here    = '<a href=".">' . $GLOBALS['_LANG']['home'] . '</a>';
+    $ur_here    = '<a href="/">' . $GLOBALS['_LANG']['home'] . '</a>';
 
     /* 根据文件名分别处理中间的部分 */
     if ($filename != 'index')
@@ -426,6 +426,28 @@ function assign_articles($id, $num)
 }
 
 /**
+ * 获得指定分类同级的所有分类以及该分类下的子分类
+ *
+ * @access  public
+ * @param   integer     $cat_id     分类编号
+ * @return  array
+ */
+function article_categories_count($cat_id = 0)
+{
+
+
+    /*
+     判断当前分类中全是是否是底级分类，
+     如果是取出底级分类上级分类，
+     如果不是取当前分类及其下的子分类
+    */
+    $sql = "SELECT count(article_id) FROM " .$GLOBALS['ecs']->table('article'). " WHERE cat_id = ".$cat_id." and is_open = 1";
+    $option_num = $GLOBALS['db']->getOne($sql);
+
+    return $option_num;
+}
+
+/**
  * 分配帮助信息
  *
  * @access  public
@@ -436,7 +458,7 @@ function get_shop_help()
     $sql = 'SELECT c.cat_id, c.cat_name, c.sort_order, a.article_id, a.title, a.file_url, a.open_type ' .
             'FROM ' .$GLOBALS['ecs']->table('article'). ' AS a ' .
             'LEFT JOIN ' .$GLOBALS['ecs']->table('article_cat'). ' AS c ' .
-            'ON a.cat_id = c.cat_id WHERE c.cat_type = 5 AND a.is_open = 1 ' .
+            'ON a.cat_id = c.cat_id WHERE c.cat_type = 1 AND a.is_open = 1 ' .
             'ORDER BY c.sort_order ASC, a.article_id';
     $res = $GLOBALS['db']->getAll($sql);
 
@@ -451,6 +473,7 @@ function get_shop_help()
             sub_str($row['title'], $GLOBALS['_CFG']['article_title_length']) : $row['title'];
         $arr[$row['cat_id']]['article'][$key]['url']         = $row['open_type'] != 1 ?
             build_uri('article', array('aid' => $row['article_id']), $row['title']) : trim($row['file_url']);
+        $arr[$row['cat_id']]['cat_count']                       = article_categories_count($row['cat_id']);
     }
 
     return $arr;
@@ -2044,7 +2067,7 @@ function license_info()
         }
         $url_domain=url_domain();
         $host = 'http://' . $host .$url_domain ;
-        $license = '<a href="http://www.ecshop.com/license.php?product=ecshop_b2c&url=' . urlencode($host) . '" target="_blank"
+        $license = '<a href="http://www.dogwhere.com/" target="_blank"
 >&nbsp;&nbsp;Licensed</a>';
         return $license;
     }

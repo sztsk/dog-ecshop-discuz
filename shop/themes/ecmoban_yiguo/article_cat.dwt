@@ -16,57 +16,65 @@
 {insert_scripts files='common.js'}
 </head>
 <body>
+
 <!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->
 
-  <!-- #BeginLibraryItem "/library/ur_here.lbi" --><!-- #EndLibraryItem -->
-
-<div class="block clearfix">
-  <!--left start-->
-  <div class="AreaL">
-<!-- #BeginLibraryItem "/library/left_help.lbi" --><!-- #EndLibraryItem -->
-<!-- TemplateBeginEditable name="左边广告区域（宽200px）" -->
-<!-- TemplateEndEditable -->
-    <!--AD end-->
-    <!-- #BeginLibraryItem "/library/history.lbi" --><!-- #EndLibraryItem -->
-  </div>
-  <!--left end-->
-  <!--right start-->
-  <div class="AreaR">
- 
-    <div >
-                    <form action="{$search_url}" name="search_form" method="post" class="article_search">
-        <input name="keywords" type="text" id="requirement" value="{$search_value}" class="inputBg" />
-        <input name="id" type="hidden" value="{$cat_id}" />
-        <input name="cur_url" id="cur_url" type="hidden" value="" />
-        <input type="submit" value="{$lang.button_search}" class="bnt_blue_1" />
-      </form>
-<div class="art_cat_box">
-      <table width="100%" border="0" cellpadding="5" cellspacing="0">
-      <tr>
-        <th style="background:#e5e5e5">{$lang.article_title}</th>
-          <th style="background:#e5e5e5">{$lang.article_author}</th>
-          <th style="background:#e5e5e5">{$lang.article_add_time}</th>
-        </tr>
-      <!-- {foreach from=$artciles_list item=article} -->
-      <tr>
-        <td><a style="text-decoration:none" href="{$article.url}" title="{$article.title|escape:html}" class="f6">{$article.short_title}</a></td>
-          <td align="center">{$article.author}</td>
-          <td align="center">{$article.add_time}</td>
-        </tr>
-      <!-- {/foreach} -->
-    </table>
+<div class="a_navs">
+    <div class="grid_c1">
+     <!-- #BeginLibraryItem "/library/ur_here.lbi" --><!-- #EndLibraryItem -->
     </div>
-    </div>
-
-  <div class="blank5"></div>
-  <!-- #BeginLibraryItem "/library/pages.lbi" --><!-- #EndLibraryItem -->
-  </div>  
-  <!--right end-->
 </div>
 
-<!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
-</body>
-<script type="text/javascript">
-document.getElementById('cur_url').value = window.location.href;
+    <div class="a_bd">
+        <div class="grid_c1 clear">
+            <div class="a_cnt">
+                 <!-- {foreach from=$artciles_list item=article} -->
+                 <div class="a_item">
+                    <div class="a_item_hd">
+                        <span class="a_item_cate">{$cat_name}</span>
+                        <span class="a_item_time">{$article.add_time}</span>
+                    </div>
+                    <h1 class="a_item_tit"><a target="_blank" href="{$article.url}" title="{$article.title|escape:html}">{$article.short_title}</a></h1>
+                    <div class="a_item_bd">
+                        <div class="a_item_img">
+                            <a href="{$article.url}" title="{$article.title|escape:html}"><img src="{$article.file_url}" alt="{$article.short_title}" /></a>
+                        </div>
+                        <div class="a_item_txt">
+                            {$article.content|strip_tags|truncate:200}
+                        </div>
+                    </div>
+                </div>
+                  <!-- {/foreach} -->
+
+                  <!-- 分页 -->
+                <!-- #BeginLibraryItem "/library/pages.lbi" --><!-- #EndLibraryItem -->
+                
+            </div>
+            <div class="a_slider">
+
+                <div class="a_cate">
+                    <h2 class="a_cate_hd">专题分类</h2>
+                    <div class="a_cate_bd">
+                        <!-- #BeginLibraryItem "/library/left_help.lbi" --><!-- #EndLibraryItem -->
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+
+function hShowSub(dom){
+  if(dom.className == "a_cate_item"){
+    dom.className = "a_cate_item a_cate_item_on";
+  }else{
+    dom.className = "a_cate_item";
+  }
+  
+}
 </script>
+    <!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
+
+</body>
+
 </html>
