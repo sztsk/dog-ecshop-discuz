@@ -261,7 +261,7 @@
 .ttp .showli .on{ position: absolute; top: -1px; left: 0; }
 .ttp .showli .oh{ overflow: hidden; }
 .ttp .showli .oa{ height: 92px; overflow: auto; z-index: 3; }
-.ttp .showli a,.ttp .showli strong{ background: none; border: none; white-space: nowrap; margin: 0; padding: 0; color: #1bbc9b; float: none; }
+.ttp .showli a,.ttp .showli strong{ display: block; background: none; border: none; white-space: nowrap; margin: 0; padding: 0; color: #1bbc9b; float: none; }
 .ttp .showli li{ line-height: 22px; margin-bottom: 1px; text-indent: 20px; padding: 0; text-align: left; }
 .ttp .showli li:hover{ background-color: #1bbc9b; }
 .ttp .showli li a:hover{ background: none; }
