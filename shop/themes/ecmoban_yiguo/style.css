@@ -1022,7 +1022,7 @@ opacity: 0.7;
 .mod_toolbar_nocar{width: auto;}
 
 .mod_ft{height: 115px; padding-top: 20px; background: #bbe7e4;}
-.mod_ft_logo{width:103px;height:103px; display: block; float: left; background-position:-483px -201px;}
+.mod_ft_logo{width:103px;height:103px; display: none; float: left; background-position:-483px -201px;}
 .mod_ft_list{padding: 36px 0 0 45px;float: left;}
 .mod_ft_list li{ float: left; margin-right: 100px; font-size: 14px;}
 .mod_ft_list a{font-weight: 700;}

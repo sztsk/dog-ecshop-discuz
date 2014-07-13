@@ -14,9 +14,8 @@ var process_request = "{$lang.process_request}";
             <li><a id="J_topic" href="/topic.html">专题</a></li>
             <li><a href="/download.html">APP下载</a></li>
             <li><a href="/vip.html">会员卡</a></li>
-            <li><a id="J_shop" href="/shop/" class="selected">电子项圈</a></li>
-            <li><a href="/forum/forum.php">论坛</a></li>
-            <li class="last"><a href="/contact.html">联系我们</a></li>
+            <li class="J_shop"><a id="J_shop" href="/shop/" class="selected">电子项圈</a></li>
+            <li class="last"><a href="/forum/">论坛</a></li>
         </ul>
         <div id="J_member" class="mod_toolbar_info">
             {insert_scripts files='transport.js,utils.js'}
