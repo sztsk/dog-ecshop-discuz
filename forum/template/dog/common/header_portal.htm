@@ -43,13 +43,110 @@ $rsshead
 <!--{/if}-->
 
 <div class="header_index">
-  <a href="forum.php" title="进入论坛"><i class="spt"></i></a>
+  <i class="spt"></i>
+</div>
+<div class="mod_toolbar">
+  <div class="wrap clearfix">
+      <ul class="mod_toolbar_nav">
+          <li><a href="/index.html">首页</a></li>
+          <li><a href="/topic.html">专题</a></li>
+          <li><a href="/download.html">APP下载</a></li>
+          <li><a href="/vip.html">会员卡</a></li>
+          <li><a href="/shop/">电子项圈</a></li>
+          <li><a href="/forum/forum.php" class="selected">论坛</a></li>
+      </ul>
+      <div class="mod_toolbar_info">
+        <div class="user_nav">
+          <!--{if $_G['uid']}-->
+          <div id="newry_user">
+            <ul id="newry_nav">
+              <li id="user_box">
+                <span class="txt">
+                  <a href="home.php?mod=space&uid=$_G[uid]" target="_blank">个人中心</a>
+                  <a href="member.php?mod=logging&action=logout&formhash={FORMHASH}">退出登录</a>
+                </span>
+                <!--{if $_G['setting']['taskon'] && !empty($_G['cookie']['taskdoing_'.$_G['uid']])}-->
+                <span class="txt">
+                  <a href="home.php?mod=task&item=doing" id="task_ntc" class="new">{lang task_doing}</a>
+                </span>
+                <!--{/if}-->
+                <span class="head">
+                  <a href="home.php?mod=space&uid=$_G[uid]" target="_blank" title="{lang visit_my_space}" id="umnav" class="username" onMouseOver="showMenu({'ctrlid':this.id,'ctrlclass':'a'})">
+                  <!--{avatar($_G[uid],small)}-->
+                  </a>
+                  <!--{if $_G[member][newprompt]}-->
+                  <a href="home.php?mod=space&do=pm">
+                    <span class="num">
+                      $_G[member][newprompt]
+                    </span>  
+                  </a>
+                  <!--{/if}-->
+                </span>
+              </li>
+            </ul>
+          </div>
+          <!--{elseif !empty($_G['cookie']['loginuser'])}-->
+          <div id="newry_user">
+            <ul id="newry_nav">
+              <li id="login_u_box">
+                <span class="txt">
+                  <a id="loginuser" class="username">
+                  <!--{echo dhtmlspecialchars($_G['cookie']['loginuser'])}-->
+                  </a>
+                </span>
+                <span class="txt">
+                  <a href="member.php?mod=logging&action=login" onClick="showWindow('login', this.href)">{lang activation}</a>
+                </span>
+                <span class="txt">
+                  <a href="member.php?mod=logging&action=logout&formhash={FORMHASH}">{lang logout}</a>
+                </span>
+              </li>
+            </ul>
+          </div>
+          <!--{/if}-->
+          <!-- /Block user information module HEADER -->
+          <ul id="umnav_menu" class="p_pop nav_pop" style="display: none;">
+            <p class="newry_arrow"></p>
+            <li><a class="infos" href="home.php?mod=space&uid=$_G[uid]" target="_blank" title="{lang visit_my_space}">{$_G[member][username]}</a></li>
+            <li><a href="home.php?mod=spacecp&ac=credit&showcredit=1" id="extcreditmenu">{lang credits}: $_G[member][credits]</a></li>
+            <li><a href="home.php?mod=spacecp">{lang setup}</a></li>
+            <!--{loop $_G['setting']['mynavs'] $nav}-->
+            <!--{if $nav['available'] && (!$nav['level'] || ($nav['level'] == 1 && $_G['uid']) || ($nav['level'] == 2 && $_G['adminid'] > 0) || ($nav['level'] == 3 && $_G['adminid'] == 1))}-->
+            {eval $nav[code] = str_replace('style="', '_style="', $nav[code]);}
+            <li>$nav[code]</li>
+            <!--{/if}-->
+            <!--{/loop}-->
+            <!--{hook/global_usernav_extra3}-->
+            <!--{if ($_G['group']['allowmanagearticle'] || $_G['group']['allowpostarticle'] || $_G['group']['allowdiy'] || getstatus($_G['member']['allowadmincp'], 4) || getstatus($_G['member']['allowadmincp'], 6) || getstatus($_G['member']['allowadmincp'], 2) || getstatus($_G['member']['allowadmincp'], 3))}-->
+            <li><a href="portal.php?mod=portalcp">
+              <!--{if $_G['setting']['portalstatus'] }-->
+              {lang portal_manage}
+              <!--{else}-->
+              {lang portal_block_manage}
+              <!--{/if}-->
+              </a></li>
+            <!--{/if}-->
+            <!--{if $_G['uid'] && $_G['group']['radminid'] > 1}-->
+            <li><a href="forum.php?mod=modcp&fid=$_G[fid]" target="_blank">{lang forum_manager}</a></li>
+            <!--{/if}-->
+            <!--{if $_G['uid'] && $_G['adminid'] == 1 && $_G['setting']['cloud_status']}-->
+            <li><a href="admin.php?frames=yes&action=cloud&operation=applist" target="_blank">{lang cloudcp}</a></li>
+            <!--{/if}-->
+            <!--{if $_G['uid'] && getstatus($_G['member']['allowadmincp'], 1)}-->
+            <li><a href="admin.php" target="_blank">{lang admincp}</a></li>
+            <!--{/if}-->
+            <!--{hook/global_usernav_extra4}-->
+            <li><a href="member.php?mod=logging&action=logout&formhash={FORMHASH}">{lang logout}</a></li>
+          </ul>
+        </div>
+      </div>
+  </div>
 </div>
 <div class="wrap">
   <div class="banner_index">
     <!--{if !$_G['uid']}-->
     <!-- {template member/dw_login_simple} -->
-    <a class="reg_btn" href="member.php?mod=register">点此注册</a>
+    <a class="reg_btn" href="/shop/user.php?act=register&back_act=/forum/forum.php">点此注册</a>
     <span class="title">
       <i class="spt"></i>
       已有帐号

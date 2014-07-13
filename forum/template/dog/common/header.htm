@@ -88,9 +88,11 @@ $rsshead
                 <!--{avatar($_G[uid],small)}-->
                 </a>
                 <!--{if $_G[member][newprompt]}-->
-                <span class="num">
-                  $_G[member][newprompt]
-                </span>
+                <a href="home.php?mod=space&do=pm">
+                  <span class="num">
+                    $_G[member][newprompt]
+                  </span>  
+                </a>
                 <!--{/if}-->
               </span>
             </li>
@@ -126,10 +128,13 @@ $rsshead
                 <!--
                 <a href="member.php?mod=register" class="btn-register">注册</a>
                 -->
-                <a href="/shop/user.php?act=register" class="btn-register">注册</a>
+                <a href="/shop/user.php?act=register&back_act=/forum/forum.php" class="btn-register">注册</a>
               </span>
             </li>
           </ul>
+        </div>
+        <div style="display:none">
+          <!--{template member/login_simple}-->
         </div>
         <!--{else}-->
         <div id="newry_user">
@@ -210,5 +215,6 @@ $rsshead
   
 </div>
 <!--{/if}-->
+
 <div id="wp" class="wp">
   <div class="inner">

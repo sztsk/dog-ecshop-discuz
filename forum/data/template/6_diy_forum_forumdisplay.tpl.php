@@ -1,12 +1,12 @@
 <?php if(!defined('IN_DISCUZ')) exit('Access Denied'); hookscriptoutput('forumdisplay');
 0
-|| checktplrefresh('./template/dog/forum/forumdisplay.htm', './template/default/forum/forumdisplay_leftside.htm', 1404098887, 'diy', './data/template/6_diy_forum_forumdisplay.tpl.php', './template/dog', 'forum/forumdisplay')
-|| checktplrefresh('./template/dog/forum/forumdisplay.htm', './template/default/forum/recommend.htm', 1404098887, 'diy', './data/template/6_diy_forum_forumdisplay.tpl.php', './template/dog', 'forum/forumdisplay')
-|| checktplrefresh('./template/dog/forum/forumdisplay.htm', './template/default/common/seccheck.htm', 1404098887, 'diy', './data/template/6_diy_forum_forumdisplay.tpl.php', './template/dog', 'forum/forumdisplay')
-|| checktplrefresh('./template/dog/forum/forumdisplay.htm', './template/dog/forum/forumdisplay_list.htm', 1404098887, 'diy', './data/template/6_diy_forum_forumdisplay.tpl.php', './template/dog', 'forum/forumdisplay')
-|| checktplrefresh('./template/dog/forum/forumdisplay.htm', './template/default/forum/forumdisplay_sort.htm', 1404098887, 'diy', './data/template/6_diy_forum_forumdisplay.tpl.php', './template/dog', 'forum/forumdisplay')
-|| checktplrefresh('./template/dog/forum/forumdisplay.htm', './template/default/forum/search_sortoption.htm', 1404098887, 'diy', './data/template/6_diy_forum_forumdisplay.tpl.php', './template/dog', 'forum/forumdisplay')
-|| checktplrefresh('./template/dog/forum/forumdisplay.htm', './template/default/forum/search_sortoption.htm', 1404098887, 'diy', './data/template/6_diy_forum_forumdisplay.tpl.php', './template/dog', 'forum/forumdisplay')
+|| checktplrefresh('./template/dog/forum/forumdisplay.htm', './template/default/forum/forumdisplay_leftside.htm', 1404550379, 'diy', './data/template/6_diy_forum_forumdisplay.tpl.php', './template/dog', 'forum/forumdisplay')
+|| checktplrefresh('./template/dog/forum/forumdisplay.htm', './template/default/forum/recommend.htm', 1404550379, 'diy', './data/template/6_diy_forum_forumdisplay.tpl.php', './template/dog', 'forum/forumdisplay')
+|| checktplrefresh('./template/dog/forum/forumdisplay.htm', './template/default/common/seccheck.htm', 1404550379, 'diy', './data/template/6_diy_forum_forumdisplay.tpl.php', './template/dog', 'forum/forumdisplay')
+|| checktplrefresh('./template/dog/forum/forumdisplay.htm', './template/dog/forum/forumdisplay_list.htm', 1404550379, 'diy', './data/template/6_diy_forum_forumdisplay.tpl.php', './template/dog', 'forum/forumdisplay')
+|| checktplrefresh('./template/dog/forum/forumdisplay.htm', './template/default/forum/forumdisplay_sort.htm', 1404550379, 'diy', './data/template/6_diy_forum_forumdisplay.tpl.php', './template/dog', 'forum/forumdisplay')
+|| checktplrefresh('./template/dog/forum/forumdisplay.htm', './template/default/forum/search_sortoption.htm', 1404550379, 'diy', './data/template/6_diy_forum_forumdisplay.tpl.php', './template/dog', 'forum/forumdisplay')
+|| checktplrefresh('./template/dog/forum/forumdisplay.htm', './template/default/forum/search_sortoption.htm', 1404550379, 'diy', './data/template/6_diy_forum_forumdisplay.tpl.php', './template/dog', 'forum/forumdisplay')
 ;?><?php include template('common/header'); if($_G['forum']['ismoderator']) { ?>
 <script src="<?php echo $_G['setting']['jspath'];?>forum_moderate.js?<?php echo VERHASH;?>" type="text/javascript"></script>
 <?php } ?>
@@ -230,7 +230,7 @@ slideImgTexts[<?php echo $k+1; ?>] = '<?php echo $imginfo['subject'];?>';
 <?php if(!$liveallowpostreply) { ?>
 <div>
 <?php if(!$_G['uid']) { ?>
-您需要登录后才可以回帖 <a href="member.php?mod=logging&amp;action=login" onclick="showWindow('login', this.href)" class="xi2">登录</a> | <a href="member.php?mod=<?php echo $_G['setting']['regname'];?>" class="xi2"><?php echo $_G['setting']['reglinkname'];?></a>
+您需要登录后才可以回帖 <a href="member.php?mod=logging&amp;action=login" onclick="showWindow('login', this.href)" class="xi2">登录</a> | <a href="/shop/user.php?act=register&amp;back_act=/forum/forum.php" class="xi2"><?php echo $_G['setting']['reglinkname'];?></a>
 <?php } else { ?>
 您现在无权发帖。<a href="javascript:;" onclick="ajaxpost('livereplypostform', 'livereplypostreturn', 'livereplypostreturn', 'onerror', $('livereplysubmit'));" class="xi2">点击查看原因</a>
 <?php } ?>
@@ -449,21 +449,43 @@ getnewlivepostlist();
 <?php if(!empty($_G['setting']['pluginhooks']['forumdisplay_postbutton_top'])) echo $_G['setting']['pluginhooks']['forumdisplay_postbutton_top'];?>
 </div>
 <?php if(($_G['forum']['threadtypes'] && $_G['forum']['threadtypes']['listable']) || count($_G['forum']['threadsorts']['types']) > 0) { ?>
-<ul id="thread_types" class="ttp bm cl">
+<div id="thread_types" class="ttp bm cl">
 <?php if(!empty($_G['setting']['pluginhooks']['forumdisplay_threadtype_inner'])) echo $_G['setting']['pluginhooks']['forumdisplay_threadtype_inner'];?>
-<li id="ttp_all" <?php if(!$_get['typeid'] && !$_GET['sortid']) { ?>class="xw1 a"<?php } ?>><a href="forum.php?mod=forumdisplay&amp;fid=<?php echo $_G['fid'];?><?php if($_G['forum']['threadsorts']['defaultshow']) { ?>&amp;filter=sortall&amp;sortall=1<?php } if($_GET['archiveid']) { ?>&amp;archiveid=<?php echo $_GET['archiveid'];?><?php } ?>">全部</a></li>
-<?php if($_G['forum']['threadtypes']) { if(is_array($_G['forum']['threadtypes']['types'])) foreach($_G['forum']['threadtypes']['types'] as $id => $name) { if($_GET['typeid'] == $id) { ?>
-<li class="xw1 a"><a href="forum.php?mod=forumdisplay&amp;fid=<?php echo $_G['fid'];?><?php if($_GET['sortid']) { ?>&amp;filter=sortid&amp;sortid=<?php echo $_GET['sortid'];?><?php } if($_GET['archiveid']) { ?>&amp;archiveid=<?php echo $_GET['archiveid'];?><?php } ?>"><?php if($_G['forum']['threadtypes']['icons'][$id] && $_G['forum']['threadtypes']['prefix'] == 2) { ?><img class="vm" src="<?php echo $_G['forum']['threadtypes']['icons'][$id];?>" alt="" /> <?php } ?><?php echo $name;?><?php if($showthreadclasscount['typeid'][$id]) { ?><span class="xg1 num"><?php echo $showthreadclasscount['typeid'][$id];?></span><?php } ?></a></li>
+<span id="ttp_all" <?php if(!$_get['typeid'] && !$_GET['sortid']) { ?>class="xw1 a"<?php } ?>><a href="forum.php?mod=forumdisplay&amp;fid=<?php echo $_G['fid'];?><?php if($_G['forum']['threadsorts']['defaultshow']) { ?>&amp;filter=sortall&amp;sortall=1<?php } if($_GET['archiveid']) { ?>&amp;archiveid=<?php echo $_GET['archiveid'];?><?php } ?>">全部</a></span>
+<?php if($_G['forum']['threadtypes']) { ?>
+<div class="showli" id="jShowLi">
+<i class="spt"></i>
+<ul class="oh">
+<?php if(!$_GET['typeid']) { ?>
+<li class="on">选择城市</li>
+<?php } if(is_array($_G['forum']['threadtypes']['types'])) foreach($_G['forum']['threadtypes']['types'] as $id => $name) { if($_GET['typeid'] == $id) { ?>
+<li class="on xw1 a"><a href="javascript:"><?php if($_G['forum']['threadtypes']['icons'][$id] && $_G['forum']['threadtypes']['prefix'] == 2) { ?><img class="vm" src="<?php echo $_G['forum']['threadtypes']['icons'][$id];?>" alt="" /> <?php } ?><?php echo $name;?><?php if($showthreadclasscount['typeid'][$id]) { ?><span class="xg1 num"><?php echo $showthreadclasscount['typeid'][$id];?></span><?php } ?></a></li>
 <?php } else { ?>
 <li><a href="forum.php?mod=forumdisplay&amp;fid=<?php echo $_G['fid'];?>&amp;filter=typeid&amp;typeid=<?php echo $id;?><?php echo $forumdisplayadd['typeid'];?><?php if($_GET['archiveid']) { ?>&amp;archiveid=<?php echo $_GET['archiveid'];?><?php } ?>"><?php if($_G['forum']['threadtypes']['icons'][$id] && $_G['forum']['threadtypes']['prefix'] == 2) { ?><img class="vm" src="<?php echo $_G['forum']['threadtypes']['icons'][$id];?>" alt="" /> <?php } ?><?php echo $name;?><?php if($showthreadclasscount['typeid'][$id]) { ?><span class="xg1 num"><?php echo $showthreadclasscount['typeid'][$id];?></span><?php } ?></a></li>
-<?php } } } if($_G['forum']['threadsorts']) { if($_G['forum']['threadtypes']) { ?><li><span class="pipe">|</span></li><?php } if(is_array($_G['forum']['threadsorts']['types'])) foreach($_G['forum']['threadsorts']['types'] as $id => $name) { if($_GET['sortid'] == $id) { ?>
+<?php } } ?>	
+</ul>
+</div>
+
+<?php } if($_G['forum']['threadsorts']) { if($_G['forum']['threadtypes']) { ?><li><span class="pipe">|</span></li><?php } if(is_array($_G['forum']['threadsorts']['types'])) foreach($_G['forum']['threadsorts']['types'] as $id => $name) { if($_GET['sortid'] == $id) { ?>
 <li class="xw1 a"><a href="forum.php?mod=forumdisplay&amp;fid=<?php echo $_G['fid'];?><?php if($_GET['typeid']) { ?>&amp;filter=typeid&amp;typeid=<?php echo $_GET['typeid'];?><?php } if($_GET['archiveid']) { ?>&amp;archiveid=<?php echo $_GET['archiveid'];?><?php } ?>"><?php echo $name;?><?php if($showthreadclasscount['sortid'][$id]) { ?><span class="xg1 num"><?php echo $showthreadclasscount['sortid'][$id];?></span><?php } ?></a></li>
 <?php } else { ?>
 <li><a href="forum.php?mod=forumdisplay&amp;fid=<?php echo $_G['fid'];?>&amp;filter=sortid&amp;sortid=<?php echo $id;?><?php echo $forumdisplayadd['sortid'];?><?php if($_GET['archiveid']) { ?>&amp;archiveid=<?php echo $_GET['archiveid'];?><?php } ?>"><?php echo $name;?><?php if($showthreadclasscount['sortid'][$id]) { ?><span class="xg1 num"><?php echo $showthreadclasscount['sortid'][$id];?></span><?php } ?></a></li>
 <?php } } } ?>
 <?php if(!empty($_G['setting']['pluginhooks']['forumdisplay_filter_extra'])) echo $_G['setting']['pluginhooks']['forumdisplay_filter_extra'];?>
-</ul>
-<script type="text/javascript">showTypes('thread_types');</script>
+</div>
+<script>
+showTypes('thread_types');
+jQuery('#jShowLi').click(function(e) {
+var _t = jQuery(this),
+_ul = _t.find('ul');
+if (_ul.hasClass('oh')) {
+_ul.removeClass('oh').addClass('oa');	
+}else{
+_ul.removeClass('oa').addClass('oh');	
+};
+
+});
+</script>
 <?php } ?>
 <?php if(!empty($_G['setting']['pluginhooks']['forumdisplay_threadtype_extra'])) echo $_G['setting']['pluginhooks']['forumdisplay_threadtype_extra'];?>
 <?php if(empty($_G['forum']['sortmode'])) { ?><div id="threadlist" class="tl" style="position: relative;">
@@ -1140,8 +1162,11 @@ scrolltimer = null;
 <?php } } ?>
 <div class="bm bw0 pgs cl">
 <span id="fd_page_bottom"><?php echo $multipage;?></span>
+<!--
 <span <?php if($_g['setting']['visitedforums']) { ?>id="visitedforumstmp" onmouseover="$('visitedforums').id = 'visitedforumstmp';this.id = 'visitedforums';showMenu({'ctrlid':this.id,'pos':'21'})"<?php } ?> class="pgb y"><a href="forum.php">返&nbsp;回</a></span>
-    	<?php if(!empty($_G['setting']['pluginhooks']['forumdisplay_postbutton_bottom'])) echo $_G['setting']['pluginhooks']['forumdisplay_postbutton_bottom'];?>
+-->
+
+    <?php if(!empty($_G['setting']['pluginhooks']['forumdisplay_postbutton_bottom'])) echo $_G['setting']['pluginhooks']['forumdisplay_postbutton_bottom'];?>
 </div>
 <?php } else { ?><div id="threadlist" class="bm bmw"<?php if($_G['uid']) { ?> style="position: relative;"<?php } ?>>
 <?php if($quicksearchlist && !$_GET['archiveid']) { ?><script type="text/javascript">

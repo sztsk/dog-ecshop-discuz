@@ -203,7 +203,7 @@
 									<!--{if !$liveallowpostreply}-->
 										<div>
 											<!--{if !$_G[uid]}-->
-												{lang login_to_reply} <a href="member.php?mod=logging&action=login" onclick="showWindow('login', this.href)" class="xi2">{lang login}</a> | <a href="member.php?mod={$_G[setting][regname]}" class="xi2">$_G['setting']['reglinkname']</a>
+												{lang login_to_reply} <a href="member.php?mod=logging&action=login" onclick="showWindow('login', this.href)" class="xi2">{lang login}</a> | <a href="/shop/user.php?act=register&back_act=/forum/forum.php" class="xi2">$_G['setting']['reglinkname']</a>
 											<!--{else}-->
 												{lang no_permission_to_post}<a href="javascript:;" onclick="ajaxpost('livereplypostform', 'livereplypostreturn', 'livereplypostreturn', 'onerror', $('livereplysubmit'));" class="xi2">{lang click_to_show_reason}</a>
 											<!--{/if}-->
@@ -412,17 +412,26 @@
 					<!--{hook/forumdisplay_postbutton_top}-->
 				</div>
 				<!--{if ($_G['forum']['threadtypes'] && $_G['forum']['threadtypes']['listable']) || count($_G['forum']['threadsorts']['types']) > 0}-->
-					<ul id="thread_types" class="ttp bm cl">
+					<div id="thread_types" class="ttp bm cl">
 						<!--{hook/forumdisplay_threadtype_inner}-->
-						<li id="ttp_all" {if !$_get['typeid'] && !$_GET['sortid']}class="xw1 a"{/if}><a href="forum.php?mod=forumdisplay&fid=$_G[fid]{if $_G['forum']['threadsorts']['defaultshow']}&filter=sortall&sortall=1{/if}{if $_GET['archiveid']}&archiveid={$_GET['archiveid']}{/if}">{lang forum_viewall}</a></li>
+						<span id="ttp_all" {if !$_get['typeid'] && !$_GET['sortid']}class="xw1 a"{/if}><a href="forum.php?mod=forumdisplay&fid=$_G[fid]{if $_G['forum']['threadsorts']['defaultshow']}&filter=sortall&sortall=1{/if}{if $_GET['archiveid']}&archiveid={$_GET['archiveid']}{/if}">{lang forum_viewall}</a></span>
 						<!--{if $_G['forum']['threadtypes']}-->
+						<div class="showli" id="jShowLi">
+							<i class="spt"></i>
+							<ul class="oh">
+								<!--{if !$_GET['typeid']}-->
+								<li class="on">选择城市</li>
+								<!--{/if}-->
 							<!--{loop $_G['forum']['threadtypes']['types'] $id $name}-->
 								<!--{if $_GET['typeid'] == $id}-->
-								<li class="xw1 a"><a href="forum.php?mod=forumdisplay&fid=$_G[fid]{if $_GET['sortid']}&filter=sortid&sortid=$_GET['sortid']{/if}{if $_GET['archiveid']}&archiveid={$_GET['archiveid']}{/if}"><!--{if $_G[forum][threadtypes][icons][$id] && $_G['forum']['threadtypes']['prefix'] == 2}--><img class="vm" src="$_G[forum][threadtypes][icons][$id]" alt="" /> <!--{/if}-->$name<!--{if $showthreadclasscount[typeid][$id]}--><span class="xg1 num">$showthreadclasscount[typeid][$id]</span><!--{/if}--></a></li>
+								<li class="on xw1 a"><a href="javascript:"><!--{if $_G[forum][threadtypes][icons][$id] && $_G['forum']['threadtypes']['prefix'] == 2}--><img class="vm" src="$_G[forum][threadtypes][icons][$id]" alt="" /> <!--{/if}-->$name<!--{if $showthreadclasscount[typeid][$id]}--><span class="xg1 num">$showthreadclasscount[typeid][$id]</span><!--{/if}--></a></li>
 								<!--{else}-->
 								<li><a href="forum.php?mod=forumdisplay&fid=$_G[fid]&filter=typeid&typeid=$id$forumdisplayadd[typeid]{if $_GET['archiveid']}&archiveid={$_GET['archiveid']}{/if}"><!--{if $_G[forum][threadtypes][icons][$id] && $_G['forum']['threadtypes']['prefix'] == 2}--><img class="vm" src="$_G[forum][threadtypes][icons][$id]" alt="" /> <!--{/if}-->$name<!--{if $showthreadclasscount[typeid][$id]}--><span class="xg1 num">$showthreadclasscount[typeid][$id]</span><!--{/if}--></a></li>
 								<!--{/if}-->
-							<!--{/loop}-->
+							<!--{/loop}-->	
+							</ul>
+						</div>
+							
 						<!--{/if}-->
 
 						<!--{if $_G['forum']['threadsorts']}-->
@@ -436,8 +445,20 @@
 							<!--{/loop}-->
 						<!--{/if}-->
 						<!--{hook/forumdisplay_filter_extra}-->
-					</ul>
-					<script type="text/javascript">showTypes('thread_types');</script>
+					</div>
+					<script>
+						showTypes('thread_types');
+						jQuery('#jShowLi').click(function(e) {
+							var _t = jQuery(this),
+								_ul = _t.find('ul');
+							if (_ul.hasClass('oh')) {
+								_ul.removeClass('oh').addClass('oa');	
+							}else{
+								_ul.removeClass('oa').addClass('oh');	
+							};
+							
+						});
+					</script>
 				<!--{/if}-->
 				<!--{hook/forumdisplay_threadtype_extra}-->
 				<!--{if empty($_G['forum']['sortmode'])}-->
