@@ -38,7 +38,7 @@
                 <!-- 首页slide star -->
                 <div class="forum_focus">
                     <div class="hd">
-                        <strong class="spt">最新推荐</strong>
+                        <strong class="spt">热门推荐</strong>
                     </div>
                     <div class="bd" id="forumFocus">
                         <!--{block/4}-->
@@ -270,50 +270,59 @@
                     </div>
                     <!--{ad/intercat/bm a_c/-1}-->
                     <!--{/if}-->
-                    <!--{loop $catlist $key $cat}-->
-                    <!--{hook/index_catlist $cat[fid]}-->
-                    <div class="bm bmw {if $cat['forumcolumns']} flg{/if} cl">
-                        <div class="bm_h cl <!--{echo 's'.$cat[fid]}-->">
-                            <!-- 
-                            <span class="o">
-                                <img id="category_$cat[fid]_img" src="{IMGDIR}/$cat[collapseimg]" title="{lang spread}" alt="{lang spread}" onclick="toggle_collapse('category_$cat[fid]');" />
-                            </span>
-                            -->
-                            <!--{if $cat['moderators']}--><span class="y">{lang forum_category_modedby}: $cat[moderators]</span><!--{/if}-->
-                            <!--{eval $caturl = !empty($cat['domain']) && !empty($_G['setting']['domain']['root']['forum']) ? 'http://'.$cat['domain'].'.'.$_G['setting']['domain']['root']['forum'] : '';}-->
-                            <h2><img src="template/dog/style/images/f_icon.png"><a href="{if !empty($caturl)}$caturl{else}forum.php?gid=$cat[fid]{/if}" style="{if $cat[extra][namecolor]}color: {$cat[extra][namecolor]};{/if}">$cat[name]</a></h2>
-                        </div>
-                        <div id="category_$cat[fid]" style="{echo $collapse['category_'.$cat[fid]]}">
-                            <div class="table">
-                                <ul>
-                                <!--{loop $cat[forums] $forumid}-->
-                                    <!--{eval $forum=$forumlist[$forumid];}-->
-                                    <!--{eval $forumurl = !empty($forum['domain']) && !empty($_G['setting']['domain']['root']['forum']) ? 'http://'.$forum['domain'].'.'.$_G['setting']['domain']['root']['forum'] : 'forum.php?mod=forumdisplay&fid='.$forum['fid'];}-->
-                                    <li class="t_item">
-                                        <div class="img_box">
-                                            <!--{if $forum[icon]}-->
-                                            $forum[icon]
-                                            <!--{else}-->
-                                            <a href="$forumurl"{if $forum[redirect]} target="_blank"{/if}><img src="$_G['style'][styleimgdir]/forum{if $forum[folder]}_new{/if}.gif" alt="$forum[name]" /></a>
-                                            <!--{/if}-->
+                    <div class="bbs_box_oh">
+                        <div class="bbs_whole_box cl">
+                            <!--{loop $catlist $key $cat}-->
+                            <!--{hook/index_catlist $cat[fid]}-->
+                            <div class="bbs_half_box <!--{echo 'bbs'.$cat[fid]}-->">
+                                <div class="bm bmw {if $cat['forumcolumns']} flg{/if} cl">
+                                    <div class="bm_h cl <!--{echo 's'.$cat[fid]}-->">
+                                        <!-- 
+                                        <span class="o">
+                                            <img id="category_$cat[fid]_img" src="{IMGDIR}/$cat[collapseimg]" title="{lang spread}" alt="{lang spread}" onclick="toggle_collapse('category_$cat[fid]');" />
+                                        </span>
+                                        -->
+                                        <!--{if $cat['moderators']}--><span class="y">{lang forum_category_modedby}: $cat[moderators]</span><!--{/if}-->
+                                        <!--{eval $caturl = !empty($cat['domain']) && !empty($_G['setting']['domain']['root']['forum']) ? 'http://'.$cat['domain'].'.'.$_G['setting']['domain']['root']['forum'] : '';}-->
+                                        <h2><img src="template/dog/style/images/f_icon.png"><a href="{if !empty($caturl)}$caturl{else}forum.php?gid=$cat[fid]{/if}" style="{if $cat[extra][namecolor]}color: {$cat[extra][namecolor]};{/if}">$cat[name]</a></h2>
+                                    </div>
+                                    <div id="category_$cat[fid]" style="{echo $collapse['category_'.$cat[fid]]}">
+                                        <div class="table">
+                                            <ul>
+                                            <!--{loop $cat[forums] $forumid}-->
+                                                <!--{eval $forum=$forumlist[$forumid];}-->
+                                                <!--{eval $forumurl = !empty($forum['domain']) && !empty($_G['setting']['domain']['root']['forum']) ? 'http://'.$forum['domain'].'.'.$_G['setting']['domain']['root']['forum'] : 'forum.php?mod=forumdisplay&fid='.$forum['fid'];}-->
+                                                <li class="t_item">
+                                                    <div class="img_box">
+                                                        <!--{if $forum[icon]}-->
+                                                        $forum[icon]
+                                                        <!--{else}-->
+                                                        <a href="$forumurl"{if $forum[redirect]} target="_blank"{/if}><img src="$_G['style'][styleimgdir]/forum{if $forum[folder]}_new{/if}.gif" alt="$forum[name]" /></a>
+                                                        <!--{/if}-->
+                                                    </div>
+                                                    <div class="txt_box">
+                                                        <h2 class="tl">
+                                                            <a href="$forumurl"{if $forum[redirect]} target="_blank"{/if}{if $forum[extra][namecolor]} style="color: {$forum[extra][namecolor]};"{/if}>$forum[name]</a><!--{if $forum[todayposts] && !$forum['redirect']}--><em class="xw0 xi1 hide" title="{lang forum_todayposts}"> ($forum[todayposts])</em><!--{/if}-->
+                                                        </h2>
+                                                        <p class="intro">
+                                                            <!--{if $forum[description]}-->$forum[description]<!--{/if}-->
+                                                        </p>
+                                                    </div>
+                                                </li>
+                                            <!--{/loop}-->
+                                            $cat['endrows']
+                                            </ul>
                                         </div>
-                                        <div class="txt_box">
-                                            <h2 class="tl">
-                                                <a href="$forumurl"{if $forum[redirect]} target="_blank"{/if}{if $forum[extra][namecolor]} style="color: {$forum[extra][namecolor]};"{/if}>$forum[name]</a><!--{if $forum[todayposts] && !$forum['redirect']}--><em class="xw0 xi1" title="{lang forum_todayposts}"> ($forum[todayposts])</em><!--{/if}-->
-                                            </h2>
-                                            <p class="intro">
-                                                <!--{if $forum[description]}-->$forum[description]<!--{/if}-->
-                                            </p>
-                                        </div>
-                                    </li>
-                                <!--{/loop}-->
-                                $cat['endrows']
-                                </ul>
+                                    </div>
+                                </div>    
                             </div>
-                        </div>
+                            
+                            <!--{ad/intercat/bm a_c/$cat[fid]}-->
+                            <!--{/loop}-->    
+                        </div>    
                     </div>
-                    <!--{ad/intercat/bm a_c/$cat[fid]}-->
-                    <!--{/loop}-->
+                    
+                    
                     <!--{if !empty($collectiondata['data'])}-->
 
                     <!--{eval $forumscount = count($collectiondata['data']);}-->

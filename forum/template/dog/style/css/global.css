@@ -8,8 +8,9 @@
 /*mod_toolbar*/
 .mod_toolbar{background: #414141; height: 45px; line-height: 45px; font-size: 14px; color: #eeedea; }
 	.mod_toolbar_nav{ float: left; /* width: 640px; */ height: 45px; padding-left: 10px; overflow: hidden;}
+	.forum_nav .mod_toolbar_nav{ line-height: 42px; height: 42px; }
 	.mod_toolbar_nav li{ float: left; margin-right: 20px;}
-	.mod_toolbar_nav a{color:#eeedea; display: block; padding: 0 20px; }
+	.mod_toolbar_nav a{color:#eeedea; display: block; padding: 0 19px; }
 	.mod_toolbar_nav a.last{margin-right: 0;}
 	.mod_toolbar_nav a:hover,
 	.mod_toolbar_nav a.selected{background: #eeedea; color:#414141; text-decoration: none; }
@@ -88,28 +89,31 @@
     .mod_ft_logo{ width:102px; height:102px; display: block; float: left; background-position: 0 -100px; }
     .mod_ft_list{ padding: 36px 0 0 45px; float: left; }
     .mod_ft .inner_1 .mod_ft_list{ padding-left: 122px; }
-    .mod_ft_list li{ float: left; margin-right: 58px; font-size: 14px;}
+    .mod_ft_list li{ float: left; margin-right: 90px; /*margin-right: 58px;*/ font-size: 14px;}
     .mod_ft .inner_1 li{ margin-right: 100px; }
     .mod_ft_list a{ font-weight: 700; }
     .mod_ft_email{ width:63px; height:56px; display: block; float: right; background-position: -120px -100px;margin: 20px 0 0 0;}
 
 /*forum style*/
 .fl{ border: none; }
-	.fl .bm_h{ height: 19px; line-height: 19px; color: #fff; padding: 0 30px 0 6px; background: none; border: none; }
+	.fl .bm_h{ height: 18px; line-height: 18px; color: #fff; padding: 0 30px 0 6px; background: none; border: none; }
 	.fl .s1{ background: url(../images/f1_bg.png) no-repeat; }
 	.fl .s36{ background: url(../images/f2_bg.png) no-repeat; }
 	.bmw .bm_h a{ color: #fff; }
 	.bm_h .o img{ margin-top: 1px; }
 	.bm_h h2 img{ vertical-align: middle; margin-right: 16px; }
-	.fl .table{ padding-top: 36px; overflow: hidden; margin-bottom: 33px; }
+	.fl .table{ padding-top: 32px; overflow: hidden; margin-bottom: 33px; }
 	.fl .table ul{ width: 837px; }
-	.fl .table .t_item{ width: 196px; height: 51px; padding: 7px 20px 22px; margin-right: 43px; float: left; background: url(../images/f_bg.png) no-repeat; }
+	.fl .table .t_item{ width: 121px; height: 50px; padding: 7px 26px 23px; margin-right: 33px; float: left; background: url(../images/f_bg.png) no-repeat; }
 		.fl .table .t_item a{ color: #808186; }
 		.fl .table .img_box{ width: 50px; float: left; margin-right: 8px; }
 		.fl .table .txt_box{ overflow: hidden; *zoom: 1; }
-		.fl .table .tl{ font-size: 18px; line-height: 30px; color: #808186; }
-		.fl .table .intro{ line-height: 16px; color: #808186; height: 16px; overflow: hidden; }
-
+		.fl .table .tl{ font-size: 19px; line-height: 50px; color: #808186; font-weight: 500; }
+		.fl .table .intro{ line-height: 16px; color: #808186; height: 16px; display: none; }
+.bbs_box_oh{ overflow: hidden; }
+.bbs_whole_box{ width: 820px; }
+.bbs_half_box{ width: 391px; margin-right: 19px; float: left; }
+.bbs36 .table{ padding-left: 8px; }
 
 /*forum_focus*/
 .forum_focus{ padding-top: 27px; margin-bottom: 30px; height: 288px; overflow: hidden; }
@@ -198,6 +202,7 @@
 .ad .plc{ background-color: #fff; }
 .authi{ color: #888484; }
 .authi a{ color: #888484; }
+.authi .floor{ float: right; }
 .pls .avatar img{ background: none; padding: 0; }
 .favatar .bui{ padding: 10px 0 10px 15px; }
 .pls .o .pm2{ background-image: url(../images/pmto.gif); }
@@ -269,7 +274,42 @@
 .ttp .showli .on:hover{ background: none; }
 .ttp .showli .on:hover a{ color: #1bbc9b; }
 
-
-
-
+/*图片分楼*/
+#autopic_bnt{ z-index: 100; }
+.col_main{ width: auto !important; }
+.col_side_r{
+    width: 560px !important;
+}
+.side_r_one_img{
+    padding: 13px;
+    margin: 0 !important;
+}
+.side_r_one_img img{
+    width: auto !important;
+    max-width: 100px;
+    height: auto !important;
+}
+.cztop_l{
+    margin-left: 5px;
+}
+.side_r_one{
+    width: auto !important;
+    border: 1px solid #ccc;
+    background: none;
+    border-radius: 3px;
+    background: none !important;
+}
+.side_r_one_text{
+    width: 410px !important;
+    padding-left: 5px;
+}
+.side_r_one_text textarea{
+    width: 100% !important;
+}
+.smallpiclist .side_r_one, .smallpiclist .progressWrapper{
+    background: none !important;
+}
+.smallpiclist .side_r_one_img{
+    margin: 0 !important;
+}
 

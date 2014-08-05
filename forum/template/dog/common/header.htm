@@ -46,7 +46,7 @@ $rsshead
     <div class="inner">
       <h1 class="logo">
         <!--{if !isset($_G['setting']['navlogos'][$mnid])}-->
-        <a href="./" title="$_G['setting']['bbname']">{$_G['style']['boardlogo']}</a>
+        <a href="./forum.php" title="$_G['setting']['bbname']">{$_G['style']['boardlogo']}</a>
         <!--{else}-->
         $_G['setting']['navlogos'][$mnid]
         <!--{/if}-->
@@ -185,7 +185,14 @@ $rsshead
           <li><a href="member.php?mod=logging&action=logout&formhash={FORMHASH}">{lang logout}</a></li>
         </ul>
       </div>
-      <span class="spt word">多些陪伴，少些等待。欢迎进入狗狗去哪儿论坛！</span>
+      <ul class="mod_toolbar_nav">
+          <li><a href="/index.html">首页</a></li>
+          <li><a href="/topic.html">专题</a></li>
+          <li><a href="/download.html">APP下载</a></li>
+          <li><a href="/vip.html">会员卡</a></li>
+          <!-- <li><a href="/shop/">电子项圈</a></li> -->
+          <li><a href="/forum/forum.php" class="selected">论坛</a></li>
+      </ul>
     </div>
   </div>
   <!--End Navigation-->
