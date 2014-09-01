@@ -34,6 +34,7 @@ a:hover{text-decoration:underline}
 .bjqs-markers li a,
 .v_bg_2 a,
 .d_banner_down,
+.d_banner_down2,
 .a_cate_tit{background-image: url("../imgs/imgs.png"); background-repeat: no-repeat;}
 
 /*GB*/
@@ -153,8 +154,10 @@ a:hover{text-decoration:underline}
         .d_banner_2{background: url("../imgs/download/b2.jpg") no-repeat center; height: 304px;}
         .d_banner_3{background: url("../imgs/download/b3.jpg") no-repeat center; height: 246px;}
         .d_banner_2 .grid_c1{position: relative;}
-            .d_banner_down{ width:316px;height:111px;background-position:-477px -666px; position: absolute; top: -3px; left: -15px;-webkit-transition:top 0.2s ease-out;}
-            .d_banner_down:hover{ top: -8px; }
+            .d_banner_down{ width:258px;height:92px;background-position:-499px -680px; position: absolute; top: 264px; left: -15px;-webkit-transition:top 0.2s ease-out; -webkit-transform:translateZ(0)}
+            .d_banner_down:hover{ top: 258px; }
+            .d_banner_down2{ width:263px;height:97px; background-position:-21px -788px; position: absolute; top: 389px; left: -15px;-webkit-transition:top 0.2s ease-out;-webkit-transform:translateZ(0)}
+            .d_banner_down2:hover{ top: 380px; }
             .d_banner_txt{position: absolute; top: 33px; left: 305px; color: #fff;font-size: 14px;}
     .d_house{margin: 0 0 0 10px;}
         .d_house_hd{width:475px;height:55px; line-height: 55px; font-size: 28px; text-indent: 15px; color: #fff;background-position:-9px -561px;}
